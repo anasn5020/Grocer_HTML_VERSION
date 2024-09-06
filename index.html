@@ -1,0 +1,2091 @@
+<!DOCTYPE html>
+<html lang="{{ str_replace('_', '-', app()->getLocale()) }}">
+
+<head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <meta name="csrf-token" content="{{ csrf_token() }}" />
+    <meta name="description"
+        content="Grocer offers a wide variety of groceries including fresh produce, dairy products, meats, and household essentials. Shop online and get everything you need delivered to your doorstep." />
+    <meta name="keywords"
+        content="grocery, online grocery, fresh produce, dairy products, meats, household essentials, Grocer" />
+    <meta name="author" content="Software System" />
+    <meta property="og:locale" content="en_US" />
+    <meta property="og:site_name" content="Grocer" />
+    <meta name="twitter:card" content="summary_large_image" />
+    <meta property="og:title" content="Grocer - Your One-Stop Grocery Shop" />
+    <meta property="og:description"
+        content="Grocer offers a wide variety of groceries including fresh produce, dairy products, meats, and household essentials. Shop online and get everything you need delivered to your doorstep." />
+    <meta property="og:image"
+        content="https://grocer.softwaresystems.us/storage/app/public/restaurant/2024-05-30-665896300dbbd.png" />
+    <meta property="og:url" content="https://groceapp.softwaresystems.us/" />
+    <meta property="og:type" content="website" />
+    <link rel="shortcut icon" href="https://grocer.softwaresystems.us/storage/app/public/restaurant/{{ $favicon }}"
+        type="image/x-icon" />
+    <title>Home Page</title>
+    <!-- {{-- Quicksand --}} -->
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link href="https://fonts.googleapis.com/css2?family=Quicksand:wght@300..700&display=swap" rel="stylesheet" />
+    <!-- {{-- Poppins --}} -->
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+        href="https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap"
+        rel="stylesheet" />
+    <!-- {{-- Mulish --}} -->
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+        href="https://fonts.googleapis.com/css2?family=Mulish:ital,wght@0,200..1000;1,200..1000&family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap"
+        rel="stylesheet" />
+    <!-- {{-- Roboto --}} -->
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+        href="https://fonts.googleapis.com/css2?family=Roboto:ital,wght@0,100;0,300;0,400;0,500;0,700;0,900;1,100;1,300;1,400;1,500;1,700;1,900&display=swap"
+        rel="stylesheet" />
+    <!-- {{-- Inter --}} -->
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+        href="https://fonts.googleapis.com/css2?family=Inter:ital,opsz,wght@0,14..32,100..900;1,14..32,100..900&display=swap"
+        rel="stylesheet" />
+    <!-- {{-- Bootstrap 5 --}} -->
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" />
+    <!-- {{-- Bootstrap 5 Icons --}} -->
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.min.css" />
+    <!-- {{-- Font Awesome Icons CDN --}} -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css" />
+    <link rel="stylesheet" href="https://unpkg.com/aos@next/dist/aos.css" />
+    <!-- {{-- Home Page custom Stylesheet --}} -->
+    <link rel="stylesheet" href="/Assets/CSS/Home.css" />
+    <!-- {{-- NavBar Custom Stylesheet --}} -->
+    <link rel="stylesheet" href="/Assets/CSS/Navbar.css" />
+    <!-- {{-- SubNav Home Custom Stylesheet --}} -->
+    <link rel="stylesheet" href="/Assets/CSS/subnav_home.css">
+    <!-- {{-- Card Home Category Custom Stylesheet --}} -->
+    <link rel="stylesheet" href="/Assets/CSS/Components/cardhomeCategory.css">
+    <!-- {{-- Product Card Custom Stylesheet --}} -->
+    <link rel="stylesheet" href="/Assets/CSS/Components/products.css">
+    <!-- {{-- Best Sell Card Custom Stylesheet --}} -->
+    <link rel="stylesheet" href="/Assets/CSS/Components/bestsellcard.css">
+    <!-- {{-- Rating Stars Custom Stylesheet --}} -->
+    <link rel="stylesheet" href="/Assets/CSS/Components/ratingStars.css">
+    <!-- {{-- Off Card Custom Stylesheet --}} -->
+    <link rel="stylesheet" href="/Assets/CSS/Components/offcard.css">
+    <!-- {{-- Home Last Card Custom Stylesheet --}} -->
+    <link rel="stylesheet" href="/Assets/CSS/Components/lastcardhome.css">
+    <!-- {{-- Footer Custom Stylesheet --}} -->
+    <link rel="stylesheet" href="/Assets/CSS/Footer.css">
+</head>
+
+<body>
+    <!--********** NAVIGATION **********-->
+    <div>
+        <nav class="navbar navbar-expand-lg bg-white shadow-sm main_navbar">
+            <div class="container d-flex">
+                <div class="logo_main_image">
+                    <!-- {{-- MVSideBarOpenIcon --}} -->
+                    <a href="#" class="SideBarOpenIcon">
+                        <img src="Assets/Images/SmallIcons/SideBarOpenIcon.webp" alt="collapseIcon" loading="lazy" />
+                    </a>
+                    <!-- {{-- MVSideBarOpenIcon --}} -->
+                    <img src="/Assets/Images/Icons/GrocerLogo.webp" onerror="this.src='/Assets/IMAGES/ErrorImage.webp'"
+                        wire:navigate href="/" alt="Grocer__Logo" class="mainlogo" loading="lazy" />
+                </div>
+                <!-- {{-- ****************Mobile View Profile and Cart******************** --}} -->
+                <div class="mobile_cart_profile">
+                    <div class="mobile_image_profile">
+                        <a href="/settings">
+                            <img src="Assets/Images/Banner/user4.webp" class="user_profile_image user_profile_image_nav"
+                                alt="userImage" loading="lazy" />
+                        </a>
+                    </div>
+                    <div>
+                        <h1 class="mobile_cart_heading position-relative m-0">
+                            <a wire:navigate href="/cart">
+                                <img src="Assets/Images/SmallIcons/ShopCart.webp" alt="cartImage" loading="lazy" />
+                            </a>
+                            <span class="position-absolute translate-middle cart_badge border border-light">
+                                1
+                                <span class="visually-hidden">New alerts</span>
+                            </span>
+                        </h1>
+                    </div>
+                </div>
+                <!-- {{-- ****************Mobile View Profile and Cart******************** --}} -->
+                <ul class="navbar-nav me-auto my-2 my-lg-0 navbar-nav-scroll ul_nav" style="--bs-scroll-height: 100px">
+                    <li class="nav-item search_button">
+                        <form class="d-flex" onsubmit="event.preventDefault();">
+                            <div class="input-group searchButtonCate">
+                                <select name="" id="" wire:model.live="search_category"
+                                    class="SerachwithCategoriesLists">
+                                    <option value="All Categories">All Categories</option>
+                                    <option value="{{ $item['id'] }}">Fruits</option>
+                                </select>
+                                <img src="Assets/Images/Icons/dividerSearch.svg" class="searchDividerIcon" alt="" />
+                                <input type="text" wire:model.live.debounce.300ms="search_query"
+                                    class="shadow-md border-0 search_inp" maxlength="20"
+                                    placeholder="Search for items..." aria-label="Search" autocomplete="off" />
+                                <button class="btn rounded-0 shadow-md search_btn" type="submit">
+                                    <img src="Assets/Images/SmallIcons/search.webp" alt="searchIcon" loading="lazy" />
+                                </button>
+                            </div>
+                        </form>
+                    </li>
+                    <li class="nav-item d-flex whishlist_button">
+                        <h1 class="wishlist_heading position-relative">
+                            <img src="Assets/Images/SmallIcons/WishlistHeart.webp" alt="wishlistIcon" loading="lazy" />
+                            <span class="position-absolute translate-middle wishlist_badge border border-light">
+                                1
+                                <span class="visually-hidden">New alerts</span>
+                            </span>
+                        </h1>
+                        <a class="nav-link wislistHeading" href="/wishlist" wire:navigate>Wishlist</a>
+                    </li>
+                    <li class="nav-item dropdown d-flex cart_button">
+                        <h1 class="cart_heading position-relative">
+                            <img src="Assets/Images/SmallIcons/ShopCart.webp" alt="cartButton" loading="lazy" />
+                            <span class="position-absolute translate-middle wishlist_badge border border-light">
+                                1
+                                <span class="visually-hidden">New alerts</span>
+                            </span>
+                        </h1>
+                        <a href="#" class="mycartCustom" data-bs-toggle="dropdown" aria-expanded="false">
+                            <div>
+                                <h3 class="mycartCustomHeading1">My Cart</h3>
+                                <h3 class="mycartCustomHeading2">
+                                    0$
+                                </h3>
+                            </div>
+                            <div>
+                                <img src="Assets/Images/SmallIcons/ArrowDown.svg" alt="ArrowDown" loading="lazy" />
+                            </div>
+                        </a>
+                        <ul class="dropdown-menu cart_dropdownCustom dropdown-menu-end">
+                            <div class="w-75 mx-auto">
+                                <div class="d-flex justify-content-between align-items-center mb-4">
+                                    <div class="d-flex justify-content-start">
+                                        <img src="Assets/Images/SmallIcons/ShopCart.webp" alt="cartButton"
+                                            loading="lazy" />
+                                        <span class="wishlist_badge border border-light">
+                                            1
+                                            <span class="visually-hidden">New alerts</span>
+                                        </span>
+                                    </div>
+                                    <div class="d-flex justify-content-end align-content-center gap-2">
+                                        <h1 class="customCartDropdownHeading">Total:</h1>
+                                        <h1 class="customCartDropdownHeading">
+                                            0$
+                                        </h1>
+                                    </div>
+                                </div>
+                                <h1 class="text-center">Cart is Empty</h1>
+                                <div class="mt-3 mb-3 d-flex justify-content-between align-items-center gap-3">
+                                    <a wire:navigate href="/cart" class="customDropdownCartButton1">My Cart</a>
+                                    <a wire:navigate href="/billing" class="customDropdownCartButton2">Checkout</a>
+                                </div>
+                            </div>
+                        </ul>
+                    </li>
+                    <li class="nav-item dropdown d-flex profile_image">
+                        <img src="Assets/Images/Banner/user4.webp" class="user_profile_image user_profile_image_nav"
+                            alt="UserImage" loading="lazy" />
+                        <a class="nav-link loginheadingNav" href="#" role="button" data-bs-toggle="dropdown"
+                            aria-expanded="false">
+                            Login
+                            <img src="Assets/Images/SmallIcons/ArrowDown.svg" alt="" />
+                        </a>
+                        <ul class="dropdown-menu registerProfileDropdown">
+                            <li>
+                                <a class="dropdown-item" href="/history">Order History</a>
+                            </li>
+                            <li><a class="dropdown-item" href="/settings">Settings</a></li>
+                            <li><a class="dropdown-item" href="/orders">Orders</a></li>
+                            <hr />
+                            <li><a class="dropdown-item" href="/login">Login</a></li>
+                            <li><a class="dropdown-item" href="/register">Register</a></li>
+                        </ul>
+            </div>
+        </nav>
+        <!-- {{-- ******************Mobile View****************** --}} -->
+        <div class="search_component">
+            <form class="d-flex" onsubmit="event.preventDefault();">
+                <div class="input-group searchButtonCate">
+                    <select name="" id="" wire:model.live="search_category" class="SerachwithCategoriesLists">
+                        <option value="All Categories">All Categories</option>
+                        <option value="{{ $item['id'] }}">Fruits</option>
+                    </select>
+                    <img src="Assets/Images/Icons/dividerSearch.svg" class="searchDividerIcon" alt="" />
+                    <input type="text" wire:model.live.debounce.300ms="search_query"
+                        class="form-control shadow-md border-0 search_inp" maxlength="20"
+                        placeholder="Search for items..." aria-label="Search" autocomplete="off" />
+                    <button class="btn rounded-0 shadow-md search_btn">
+                        <img src="Assets/Images/SmallIcons/search.webp" alt="searchIcon" loading="lazy" />
+                    </button>
+                </div>
+            </form>
+        </div>
+        <!-- {{-- ******************Mobile View****************** --}} -->
+    </div>
+    <!--********** NAVIGATION **********-->
+
+    <!--********** HOME SUB NAV **********-->
+    <nav class="navbar navbar-expand-lg bg-white d-sm-none d-md-none d-lg-block home_page_nav_two"
+        style="border-top: 1px solid #f1f1f1;">
+        <div class="container homeSubNavBarLayout">
+            <div class="homeSubNavBarItem1">
+                <a href="/category" wire:navigate class="Explore_all_categories_Btn">
+                    <img src="Assets/Images/SmallIcons/BrowsCategoryIcon.png" alt="">
+                    &nbsp;
+                    Brows All Categories</a>
+            </div>
+            <div class="homeSubNavBarItem2">
+                <ul class="navbar-nav me-auto my-2 my-lg-0 navbar-nav-scroll ullists">
+                    <li class="nav-item home_li">
+                        <a href="/" wire:navigate
+                            class="{{ request()->is('/') ? 'active_subNav' : '' }} SubnavIconsAdjustment"><img
+                                src="Assets/Images/SmallIcons/HomeIcon.webp" alt="">&nbsp;Home</a>
+                    </li>
+                    <li class="nav-item deals_li">
+                        <a href="/hot-deals" wire:navigate class="SubnavIconsAdjustment"><img
+                                src="Assets/Images/SmallIcons/HotdealsIcon.webp" alt="">&nbsp;Hot
+                            Deals</a>
+                    </li>
+                    <li class="nav-item promotions_li">
+                        <a href="/promotions" wire:navigate class="SubnavIconsAdjustment"><img
+                                src="Assets/Images/SmallIcons/PercentageIcon.webp" alt="">&nbsp;Promotions</a>
+                    </li>
+                    <li class="nav-item products_li">
+                        <a href="/new-products" wire:navigate class="SubnavIconsAdjustment"
+                            onclick="scrollToSection('NewProductsSection')"><img
+                                src="Assets/Images/SmallIcons/MegaPhoneIcon.webp" alt="">&nbsp;New
+                            Products</a>
+                    </li>
+                </ul>
+            </div>
+            <div class="homeSubNavBarItem3">
+                <ul class="navbar-nav me-auto my-2 my-lg-0 navbar-nav-scroll ullistsLast">
+                    <li class="nav-item support_li">
+                        <div class="SupportCenterMain">
+                            <a href="tel:8388383898329">
+                                <h3 class="SupportcenterHeading1">
+                                    <i class="bi bi-telephone Number_Support">
+                                    </i>
+                                    &nbsp;9039829228282&nbsp;
+                                </h3>
+                            </a>
+                            <h3 class="SupportcenterHeading2">24/7 support center</h3>
+                        </div>
+                    </li>
+                </ul>
+            </div>
+        </div>
+    </nav>
+    <!--********** HOME SUB NAV **********-->
+
+    <!--********** Hero Section **********-->
+    <div class="container-fluid p-0">
+        <div id="carouselExampleIndicators" class="carousel slide WebViewCarosuel" data-bs-ride="carousel">
+            <div class="carousel-indicators pb-5">
+                <button type="button" id="CustomHomeHeroNavigator" data-bs-target="#carouselExampleIndicators"
+                    data-bs-slide-to="0" class="active" aria-current="true" aria-label="Slide 1"></button>
+                <button type="button" id="CustomHomeHeroNavigator" data-bs-target="#carouselExampleIndicators"
+                    data-bs-slide-to="1" aria-label="Slide 2"></button>
+            </div>
+            <div class="carousel-inner">
+                <div class="carousel-item active">
+                    <div class="container-fluid p-0 hero_main position-relative">
+                        <div class="container">
+                            <div class="hero_description_one">
+                                <h1 class="h1 hero_main_heading">Don’t miss our daily amazing deals.</h1>
+                                <p class="mt-4 hero_heading_description">Save up to 60% off on your first order</p>
+                                <!-- {{-- *********Subscribe Email Component********* --}} -->
+                                <div class="w-100">
+                                    <form wire:submit="Subscribe">
+                                        <div class="input-group mb-3 mt-5">
+                                            <div class="inp_Box">
+                                                <input type="email" wire:model="email" class="subcriberEmailField"
+                                                    name="email" placeholder="Enter your email address"
+                                                    aria-label="Recipient's username" aria-describedby="button-addon2"
+                                                    maxlength="35" />
+                                                <img src="Assets/Images/SmallIcons/SubscriberSendIcon.png"
+                                                    class="sendImageIcon" alt="">
+                                            </div>
+
+                                            <button
+                                                class="d-flex justify-between align-items-center subcriberEmailButton text-white p-sm-0 pmd-0 p-lg-3"
+                                                type="submit" id="button-addon2">Subscribe
+                                                <!-- <div wire:loading class="subcriberLoader">
+                                                    <div class="spinner-border" style="width: 1rem; height: 1rem;" role="status">
+                                                        <span class="visually-hidden">Loading...</span>
+                                                    </div>
+                                                </div> -->
+                                            </button>
+                                        </div>
+                                    </form>
+                                </div>
+                            </div>
+                            <div class="position-absolute top-0 end-0">
+                                <img src="/Assets/Images/Banner/HeroHomeImage.webp"
+                                    class="w-100 img-fluid hero_img_grocery" alt="">
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="carousel-item">
+                    <div class="container-fluid p-0 hero_main position-relative">
+                        <div class="container">
+                            <div class="hero_description_one">
+                                <h1 class="h1 hero_main_heading">Don’t miss our daily amazing deals.</h1>
+                                <p class="mt-4 hero_heading_description">Save up to 60% off on your first order</p>
+                                <!-- {{-- *********Subscribe Email Component********* --}} -->
+                                <div class="w-100">
+                                    <form wire:submit="Subscribe">
+                                        <div class="input-group mb-3 mt-5">
+                                            <div class="inp_Box">
+                                                <input type="email" wire:model="email" class="subcriberEmailField"
+                                                    name="email" placeholder="Enter your email address"
+                                                    aria-label="Recipient's username" aria-describedby="button-addon2"
+                                                    maxlength="35" />
+                                                <img src="Assets/Images/SmallIcons/SubscriberSendIcon.png"
+                                                    class="sendImageIcon" alt="">
+                                            </div>
+
+                                            <button
+                                                class="d-flex justify-between align-items-center subcriberEmailButton text-white p-sm-0 pmd-0 p-lg-3"
+                                                type="submit" id="button-addon2">Subscribe
+                                            </button>
+                                        </div>
+                                    </form>
+                                </div>
+                            </div>
+                            <div class="position-absolute top-0 end-0">
+                                <img src="/Assets/Images/Banner/HeroHomeImage.webp"
+                                    class="w-100 img-fluid hero_img_grocery" alt="">
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <!-- {{-- ******************Mobile View************************* --}} -->
+        <div id="carouselExampleIndicatorsMobileView" class="carousel slide MobileviewBannerContainer"
+            data-bs-ride="carousel">
+            <div class="carousel-indicators MobileViewCarouselIndicators">
+                <button type="button" id="CustomHomeHeroNavigator" data-bs-target="#carouselExampleIndicatorsMobileView"
+                    data-bs-slide-to="0" class="active" aria-current="true" aria-label="Slide 1"></button>
+                <button type="button" id="CustomHomeHeroNavigator" data-bs-target="#carouselExampleIndicatorsMobileView"
+                    data-bs-slide-to="1" aria-label="Slide 2"></button>
+            </div>
+            <div class="carousel-inner">
+                <div class="carousel-item active">
+                    <div class="MobileviewBanner">
+                        <div class="banner_mobile_image">
+                            <img src="Assets/Images/Banner/MobileViewBanner.png" class="w-100 img-fluid" alt="">
+                            <div class="banner_mobile_content">
+                                <h4>SUMMER SALE</h4>
+                                <h1>75% OFF</h1>
+                                <h3>ONLY FRUIT & Vegitables</h3>
+                                <a href="">Shop Now <i class="bi bi-arrow-right"></i></a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="carousel-item">
+                    <div class="MobileviewBanner">
+                        <div class="banner_mobile_image">
+                            <img src="Assets/Images/Banner/MobileViewBanner.png" class="w-100 img-fluid" alt="">
+                            <div class="banner_mobile_content">
+                                <h4>SUMMER SALE</h4>
+                                <h1>75% OFF</h1>
+                                <h3>ONLY FRUIT & Vegitables</h3>
+                                <a href="">Shop Now <i class="bi bi-arrow-right"></i></a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <!-- {{-- ******************Mobile View************************* --}} -->
+    </div>
+    <!--********** Hero Section **********-->
+    <div class="container mt-5">
+        <div class="d-flex justify-content-between align-items-center ">
+            <div class="">
+                <h1 class="explorecategory_heading h5">Explore Categories</h1>
+            </div>
+        </div>
+        <div class="row mt-3 mb-5 bg-white position-relative ">
+            <div id="category" class="webviewCarouselOne">
+                <div class="homecategoryProductsMain flex-nowrap mb-sm-2 mb-md-2 mb-lg-0">
+                    <div class=" mt-sm-5 mt-md-5 mt-lg-0">
+                        <a href="/category-products/{{ $id }}" wire:navigate>
+                            <div class="CategoryCard text-center border-0" style="background-color: #FEEFEA">
+                                <div class="ImageDiv">
+                                    <img src="https://grocer.softwaresystems.us/storage/app/public/category/{{ $image }}"
+                                        onerror="this.src='Assets/Images/ERROR/ErrorImage.webp'"
+                                        class="CategoryCardImage" alt="{{ $name }}">
+                                </div>
+                                <div class="card-body">
+                                    <h1 class="h2 card_heading">Fruits</h1>
+                                    <p class="card-text card_descri">15 items</p>
+                                </div>
+                            </div>
+                        </a>
+                    </div>
+                    <div class=" mt-sm-5 mt-md-5 mt-lg-0">
+                        <a href="/category-products/{{ $id }}" wire:navigate>
+                            <div class="CategoryCard text-center border-0" style="background-color: #FEEFEA">
+                                <div class="ImageDiv">
+                                    <img src="https://grocer.softwaresystems.us/storage/app/public/category/{{ $image }}"
+                                        onerror="this.src='Assets/Images/ERROR/ErrorImage.webp'"
+                                        class="CategoryCardImage" alt="{{ $name }}">
+                                </div>
+                                <div class="card-body">
+                                    <h1 class="h2 card_heading">Fruits</h1>
+                                    <p class="card-text card_descri">15 items</p>
+                                </div>
+                            </div>
+                        </a>
+                    </div>
+                    <div class=" mt-sm-5 mt-md-5 mt-lg-0">
+                        <a href="/category-products/{{ $id }}" wire:navigate>
+                            <div class="CategoryCard text-center border-0" style="background-color: #FEEFEA">
+                                <div class="ImageDiv">
+                                    <img src="https://grocer.softwaresystems.us/storage/app/public/category/{{ $image }}"
+                                        onerror="this.src='Assets/Images/ERROR/ErrorImage.webp'"
+                                        class="CategoryCardImage" alt="{{ $name }}">
+                                </div>
+                                <div class="card-body">
+                                    <h1 class="h2 card_heading">Fruits</h1>
+                                    <p class="card-text card_descri">15 items</p>
+                                </div>
+                            </div>
+                        </a>
+                    </div>
+                    <div class=" mt-sm-5 mt-md-5 mt-lg-0">
+                        <a href="/category-products/{{ $id }}" wire:navigate>
+                            <div class="CategoryCard text-center border-0" style="background-color: #FEEFEA">
+                                <div class="ImageDiv">
+                                    <img src="https://grocer.softwaresystems.us/storage/app/public/category/{{ $image }}"
+                                        onerror="this.src='Assets/Images/ERROR/ErrorImage.webp'"
+                                        class="CategoryCardImage" alt="{{ $name }}">
+                                </div>
+                                <div class="card-body">
+                                    <h1 class="h2 card_heading">Fruits</h1>
+                                    <p class="card-text card_descri">15 items</p>
+                                </div>
+                            </div>
+                        </a>
+                    </div>
+                    <div class=" mt-sm-5 mt-md-5 mt-lg-0">
+                        <a href="/category-products/{{ $id }}" wire:navigate>
+                            <div class="CategoryCard text-center border-0" style="background-color: #FEEFEA">
+                                <div class="ImageDiv">
+                                    <img src="https://grocer.softwaresystems.us/storage/app/public/category/{{ $image }}"
+                                        onerror="this.src='Assets/Images/ERROR/ErrorImage.webp'"
+                                        class="CategoryCardImage" alt="{{ $name }}">
+                                </div>
+                                <div class="card-body">
+                                    <h1 class="h2 card_heading">Fruits</h1>
+                                    <p class="card-text card_descri">15 items</p>
+                                </div>
+                            </div>
+                        </a>
+                    </div>
+                    <div class=" mt-sm-5 mt-md-5 mt-lg-0">
+                        <a href="/category-products/{{ $id }}" wire:navigate>
+                            <div class="CategoryCard text-center border-0" style="background-color: #FEEFEA">
+                                <div class="ImageDiv">
+                                    <img src="https://grocer.softwaresystems.us/storage/app/public/category/{{ $image }}"
+                                        onerror="this.src='Assets/Images/ERROR/ErrorImage.webp'"
+                                        class="CategoryCardImage" alt="{{ $name }}">
+                                </div>
+                                <div class="card-body">
+                                    <h1 class="h2 card_heading">Fruits</h1>
+                                    <p class="card-text card_descri">15 items</p>
+                                </div>
+                            </div>
+                        </a>
+                    </div>
+                    <div class=" mt-sm-5 mt-md-5 mt-lg-0">
+                        <a href="/category-products/{{ $id }}" wire:navigate>
+                            <div class="CategoryCard text-center border-0" style="background-color: #FEEFEA">
+                                <div class="ImageDiv">
+                                    <img src="https://grocer.softwaresystems.us/storage/app/public/category/{{ $image }}"
+                                        onerror="this.src='Assets/Images/ERROR/ErrorImage.webp'"
+                                        class="CategoryCardImage" alt="{{ $name }}">
+                                </div>
+                                <div class="card-body">
+                                    <h1 class="h2 card_heading">Fruits</h1>
+                                    <p class="card-text card_descri">15 items</p>
+                                </div>
+                            </div>
+                        </a>
+                    </div>
+                </div>
+                <button class="CategoryBtnLeft">
+                    <h2 class="m-0"><i class="bi bi-arrow-left-short"></i></h2>
+                </button>
+                <button class="CategoryBtnRight">
+                    <h2 class="m-0"><i class="bi bi-arrow-right-short"></i></h2>
+                </button>
+            </div>
+            <div class="MobileViewCategoriesCardOne">
+                <div class="MobileViewCategoriesCardOneMainDiv">
+                    <!-- @foreach ($categories as $index => $item) -->
+                    <div class="">
+                        <a href="/category-products/{{ $id }}" wire:navigate>
+                            <div class="CategoryCard text-center border-0" style="background-color: #FEEFEA">
+                                <div class="ImageDiv">
+                                    <img src="https://grocer.softwaresystems.us/storage/app/public/category/{{ $image }}"
+                                        onerror="this.src='Assets/Images/ERROR/ErrorImage.webp'"
+                                        class="CategoryCardImage" alt="{{ $name }}">
+                                </div>
+                                <div class="card-body">
+                                    <h1 class="h2 card_heading">Fruits</h1>
+                                    <p class="card-text card_descri">15 items</p>
+                                </div>
+                            </div>
+                        </a>
+                    </div>
+                    <div class="">
+                        <a href="/category-products/{{ $id }}" wire:navigate>
+                            <div class="CategoryCard text-center border-0" style="background-color: #FEEFEA">
+                                <div class="ImageDiv">
+                                    <img src="https://grocer.softwaresystems.us/storage/app/public/category/{{ $image }}"
+                                        onerror="this.src='Assets/Images/ERROR/ErrorImage.webp'"
+                                        class="CategoryCardImage" alt="{{ $name }}">
+                                </div>
+                                <div class="card-body">
+                                    <h1 class="h2 card_heading">Fruits</h1>
+                                    <p class="card-text card_descri">15 items</p>
+                                </div>
+                            </div>
+                        </a>
+                    </div>
+                    <!-- @endforeach -->
+                </div>
+            </div>
+        </div>
+        <!-- {{-- *****************Explore Categories****************** --}}
+        {{-- ***************************************************** --}}
+        {{-- ***************************************************** --}}
+        {{-- ***************************************************** --}} -->
+
+        <!-- {{-- ******************Featured Products***************** --}} -->
+        <div class="container p-0 mt-5" id="NewProductsSection">
+            <div class="d-flex justify-content-between align-items-center">
+                <div class="">
+                    <h1 class="explorecategory_heading h5">Featured Products</h1>
+                </div>
+                <div class="" style="">
+                    <ul class="d-flex justify-content-between flex-nowrap category_listing2 gap-3">
+                        <li class="">
+                            <div class="d-flex">
+                                <input type="radio" id="{{ $item['name'] }}" value="0" class="d-none"
+                                    wire:model.live="featuredProductCategory" />
+                                <label for="{{ $item['name'] }}" role="button"
+                                    class="categoryLabel {{ $featuredProductCategory == 0 ? 'Active_category' : '' }}">All</label>
+                            </div>
+                        </li>
+                        <!-- @foreach ($categoryLists as $item) -->
+                        <li class="">
+                            <div class="d-flex">
+                                <input type="radio" id="{{ $item['name'] }}" wire:model.live="featuredProductCategory"
+                                    value="{{ $item['id'] }}" class="d-none" />
+                                <label for="{{ $item['name'] }}" role="button"
+                                    class="categoryLabel {{ $featuredProductCategory == $item['id'] ? 'Active_category' : '' }}">All</label>
+                            </div>
+                        </li>
+                        <li class="">
+                            <div class="d-flex">
+                                <input type="radio" id="{{ $item['name'] }}" wire:model.live="featuredProductCategory"
+                                    value="{{ $item['id'] }}" class="d-none" />
+                                <label for="{{ $item['name'] }}" role="button"
+                                    class="categoryLabel {{ $featuredProductCategory == $item['id'] ? 'Active_category' : '' }}">All</label>
+                            </div>
+                        </li>
+                        <li class="">
+                            <div class="d-flex">
+                                <input type="radio" id="{{ $item['name'] }}" wire:model.live="featuredProductCategory"
+                                    value="{{ $item['id'] }}" class="d-none" />
+                                <label for="{{ $item['name'] }}" role="button"
+                                    class="categoryLabel {{ $featuredProductCategory == $item['id'] ? 'Active_category' : '' }}">All</label>
+                            </div>
+                        </li>
+                        <li class="">
+                            <div class="d-flex">
+                                <input type="radio" id="{{ $item['name'] }}" wire:model.live="featuredProductCategory"
+                                    value="{{ $item['id'] }}" class="d-none" />
+                                <label for="{{ $item['name'] }}" role="button"
+                                    class="categoryLabel {{ $featuredProductCategory == $item['id'] ? 'Active_category' : '' }}">All</label>
+                            </div>
+                        </li>
+                        <li class="">
+                            <div class="d-flex">
+                                <input type="radio" id="{{ $item['name'] }}" wire:model.live="featuredProductCategory"
+                                    value="{{ $item['id'] }}" class="d-none" />
+                                <label for="{{ $item['name'] }}" role="button"
+                                    class="categoryLabel {{ $featuredProductCategory == $item['id'] ? 'Active_category' : '' }}">All</label>
+                            </div>
+                        </li>
+                        <!-- @endforeach -->
+                    </ul>
+                </div>
+            </div>
+            <div class="row mt-3 position-relative ">
+                <!-- <div wire:loading wire:target="featuredProductCategory">
+                    <div class="spinner-border text-success featuredProductSpinner" role="status">
+                        <span class="visually-hidden">Loading...</span>
+                    </div>
+                </div> -->
+                <div id="products" class="WebViewCarouselTwo">
+                    <div class="homefeaturedProductsMain flex-nowrap">
+                        <!-- @forelse ($featuredProducts as $item) -->
+                        <div class="">
+                            <div class="FeaturedProductsCard position-relative">
+                                <div class="position-absolute BestSellCardOffTag">
+                                    <h6>
+                                        Save 10%
+                                    </h6>
+                                </div>
+                                <div class="productcardImage text-center">
+                                    <a href="/product-details/{{ $id }}" wire:navigate>
+                                        <img src="https://grocer.softwaresystems.us/storage/app/public/product/{{ $image }}"
+                                            onerror="this.src='Assets/Images/ERROR/ErrorImage.webp'"
+                                            class="featuredProductImage" alt="{{ $name }}" loading="lazy">
+                                    </a>
+                                </div>
+                                <div class="card-body">
+                                    <p class="categoryname">Fruits</p>
+                                    <div class="nameAndUnitHeading">
+                                        <h1 class="h2 card_heading">Apple</h1>
+                                        <h4>(Kg)</h4>
+                                    </div>
+                                    <livewire:components.rating-stars :rating="$rating" />
+                                    <div class="col d-flex justify-content-start mt-2">
+                                        <div>
+                                            <h1 class="productby1">By</h1>
+                                        </div>
+                                        <div>
+                                            <h1 class="productby2">&nbsp;Grocer</h1>
+                                        </div>
+                                    </div>
+                                    <div class="PriceDivFeaturedProduct mt-2">
+                                        <div class="d-flex">
+                                            <h1 class="pricetag align-self-center">100$
+                                            </h1>
+                                        </div>
+                                        <div class="text-end align-self-center">
+                                            <a class="btn addbutton py-2"
+                                                wire:click.prevent="addToCart('{{ $id }}', '{{ $name }}', '{{ $image }}', '{{ $discountedPrice }}',  @json($variations), '{{ $unit }}')">
+                                                <i class="bi bi-cart"></i>&nbsp;Add
+                                            </a>
+                                        </div>
+
+                                    </div>
+                                </div>
+                            </div>
+
+                        </div>
+                        <div class="">
+                            <div class="FeaturedProductsCard position-relative">
+                                <div class="position-absolute BestSellCardOffTag">
+                                    <h6>
+                                        Save 10%
+                                    </h6>
+                                </div>
+                                <div class="productcardImage text-center">
+                                    <a href="/product-details/{{ $id }}" wire:navigate>
+                                        <img src="https://grocer.softwaresystems.us/storage/app/public/product/{{ $image }}"
+                                            onerror="this.src='Assets/Images/ERROR/ErrorImage.webp'"
+                                            class="featuredProductImage" alt="{{ $name }}" loading="lazy">
+                                    </a>
+                                </div>
+                                <div class="card-body">
+                                    <p class="categoryname">Fruits</p>
+                                    <div class="nameAndUnitHeading">
+                                        <h1 class="h2 card_heading">Apple</h1>
+                                        <h4>(Kg)</h4>
+                                    </div>
+                                    <livewire:components.rating-stars :rating="$rating" />
+                                    <div class="col d-flex justify-content-start mt-2">
+                                        <div>
+                                            <h1 class="productby1">By</h1>
+                                        </div>
+                                        <div>
+                                            <h1 class="productby2">&nbsp;Grocer</h1>
+                                        </div>
+                                    </div>
+                                    <div class="PriceDivFeaturedProduct mt-2">
+                                        <div class="d-flex">
+                                            <h1 class="pricetag align-self-center">100$
+                                            </h1>
+                                        </div>
+                                        <div class="text-end align-self-center">
+                                            <a class="btn addbutton py-2"
+                                                wire:click.prevent="addToCart('{{ $id }}', '{{ $name }}', '{{ $image }}', '{{ $discountedPrice }}',  @json($variations), '{{ $unit }}')">
+                                                <i class="bi bi-cart"></i>&nbsp;Add
+                                            </a>
+                                        </div>
+
+                                    </div>
+                                </div>
+                            </div>
+
+                        </div>
+                        <div class="">
+                            <div class="FeaturedProductsCard position-relative">
+                                <div class="position-absolute BestSellCardOffTag">
+                                    <h6>
+                                        Save 10%
+                                    </h6>
+                                </div>
+                                <div class="productcardImage text-center">
+                                    <a href="/product-details/{{ $id }}" wire:navigate>
+                                        <img src="https://grocer.softwaresystems.us/storage/app/public/product/{{ $image }}"
+                                            onerror="this.src='Assets/Images/ERROR/ErrorImage.webp'"
+                                            class="featuredProductImage" alt="{{ $name }}" loading="lazy">
+                                    </a>
+                                </div>
+                                <div class="card-body">
+                                    <p class="categoryname">Fruits</p>
+                                    <div class="nameAndUnitHeading">
+                                        <h1 class="h2 card_heading">Apple</h1>
+                                        <h4>(Kg)</h4>
+                                    </div>
+                                    <livewire:components.rating-stars :rating="$rating" />
+                                    <div class="col d-flex justify-content-start mt-2">
+                                        <div>
+                                            <h1 class="productby1">By</h1>
+                                        </div>
+                                        <div>
+                                            <h1 class="productby2">&nbsp;Grocer</h1>
+                                        </div>
+                                    </div>
+                                    <div class="PriceDivFeaturedProduct mt-2">
+                                        <div class="d-flex">
+                                            <h1 class="pricetag align-self-center">100$
+                                            </h1>
+                                        </div>
+                                        <div class="text-end align-self-center">
+                                            <a class="btn addbutton py-2"
+                                                wire:click.prevent="addToCart('{{ $id }}', '{{ $name }}', '{{ $image }}', '{{ $discountedPrice }}',  @json($variations), '{{ $unit }}')">
+                                                <i class="bi bi-cart"></i>&nbsp;Add
+                                            </a>
+                                        </div>
+
+                                    </div>
+                                </div>
+                            </div>
+
+                        </div>
+                        <div class="">
+                            <div class="FeaturedProductsCard position-relative">
+                                <div class="position-absolute BestSellCardOffTag">
+                                    <h6>
+                                        Save 10%
+                                    </h6>
+                                </div>
+                                <div class="productcardImage text-center">
+                                    <a href="/product-details/{{ $id }}" wire:navigate>
+                                        <img src="https://grocer.softwaresystems.us/storage/app/public/product/{{ $image }}"
+                                            onerror="this.src='Assets/Images/ERROR/ErrorImage.webp'"
+                                            class="featuredProductImage" alt="{{ $name }}" loading="lazy">
+                                    </a>
+                                </div>
+                                <div class="card-body">
+                                    <p class="categoryname">Fruits</p>
+                                    <div class="nameAndUnitHeading">
+                                        <h1 class="h2 card_heading">Apple</h1>
+                                        <h4>(Kg)</h4>
+                                    </div>
+                                    <livewire:components.rating-stars :rating="$rating" />
+                                    <div class="col d-flex justify-content-start mt-2">
+                                        <div>
+                                            <h1 class="productby1">By</h1>
+                                        </div>
+                                        <div>
+                                            <h1 class="productby2">&nbsp;Grocer</h1>
+                                        </div>
+                                    </div>
+                                    <div class="PriceDivFeaturedProduct mt-2">
+                                        <div class="d-flex">
+                                            <h1 class="pricetag align-self-center">100$
+                                            </h1>
+                                        </div>
+                                        <div class="text-end align-self-center">
+                                            <a class="btn addbutton py-2"
+                                                wire:click.prevent="addToCart('{{ $id }}', '{{ $name }}', '{{ $image }}', '{{ $discountedPrice }}',  @json($variations), '{{ $unit }}')">
+                                                <i class="bi bi-cart"></i>&nbsp;Add
+                                            </a>
+                                        </div>
+
+                                    </div>
+                                </div>
+                            </div>
+
+                        </div>
+                        <div class="">
+                            <div class="FeaturedProductsCard position-relative">
+                                <div class="position-absolute BestSellCardOffTag">
+                                    <h6>
+                                        Save 10%
+                                    </h6>
+                                </div>
+                                <div class="productcardImage text-center">
+                                    <a href="/product-details/{{ $id }}" wire:navigate>
+                                        <img src="https://grocer.softwaresystems.us/storage/app/public/product/{{ $image }}"
+                                            onerror="this.src='Assets/Images/ERROR/ErrorImage.webp'"
+                                            class="featuredProductImage" alt="{{ $name }}" loading="lazy">
+                                    </a>
+                                </div>
+                                <div class="card-body">
+                                    <p class="categoryname">Fruits</p>
+                                    <div class="nameAndUnitHeading">
+                                        <h1 class="h2 card_heading">Apple</h1>
+                                        <h4>(Kg)</h4>
+                                    </div>
+                                    <livewire:components.rating-stars :rating="$rating" />
+                                    <div class="col d-flex justify-content-start mt-2">
+                                        <div>
+                                            <h1 class="productby1">By</h1>
+                                        </div>
+                                        <div>
+                                            <h1 class="productby2">&nbsp;Grocer</h1>
+                                        </div>
+                                    </div>
+                                    <div class="PriceDivFeaturedProduct mt-2">
+                                        <div class="d-flex">
+                                            <h1 class="pricetag align-self-center">100$
+                                            </h1>
+                                        </div>
+                                        <div class="text-end align-self-center">
+                                            <a class="btn addbutton py-2"
+                                                wire:click.prevent="addToCart('{{ $id }}', '{{ $name }}', '{{ $image }}', '{{ $discountedPrice }}',  @json($variations), '{{ $unit }}')">
+                                                <i class="bi bi-cart"></i>&nbsp;Add
+                                            </a>
+                                        </div>
+
+                                    </div>
+                                </div>
+                            </div>
+
+                        </div>
+                    </div>
+                    <button class="FeaturedBtnLeft">
+                        <h2 class="m-0"><i class="bi bi-arrow-left-short"></i></h2>
+                    </button>
+                    <button class="FeaturedBtnRight">
+                        <h2 class="m-0"><i class="bi bi-arrow-right-short"></i></h2>
+                    </button>
+                </div>
+                <!-- {{-- ************Mobile View Featured Card************ --}} -->
+                <div class="MobileViewFeaturedCard">
+                    <div class="MobileViewFeaturedCardMain">
+                        <div class="">
+                            <div class="FeaturedProductsCard position-relative">
+                                <div class="position-absolute BestSellCardOffTag">
+                                    <h6>
+                                        Save 10%
+                                    </h6>
+                                </div>
+                                <div class="productcardImage text-center">
+                                    <a href="/product-details/{{ $id }}" wire:navigate>
+                                        <img src="https://grocer.softwaresystems.us/storage/app/public/product/{{ $image }}"
+                                            onerror="this.src='Assets/Images/ERROR/ErrorImage.webp'"
+                                            class="featuredProductImage" alt="{{ $name }}" loading="lazy">
+                                    </a>
+                                </div>
+                                <div class="card-body">
+                                    <p class="categoryname">Fruits</p>
+                                    <div class="nameAndUnitHeading">
+                                        <h1 class="h2 card_heading">Apple</h1>
+                                        <h4>(Kg)</h4>
+                                    </div>
+                                    <livewire:components.rating-stars :rating="$rating" />
+                                    <div class="col d-flex justify-content-start mt-2">
+                                        <div>
+                                            <h1 class="productby1">By</h1>
+                                        </div>
+                                        <div>
+                                            <h1 class="productby2">&nbsp;Grocer</h1>
+                                        </div>
+                                    </div>
+                                    <div class="PriceDivFeaturedProduct mt-2">
+                                        <div class="d-flex">
+                                            <h1 class="pricetag align-self-center">100$
+                                            </h1>
+                                        </div>
+                                        <div class="text-end align-self-center">
+                                            <a class="btn addbutton py-2"
+                                                wire:click.prevent="addToCart('{{ $id }}', '{{ $name }}', '{{ $image }}', '{{ $discountedPrice }}',  @json($variations), '{{ $unit }}')">
+                                                <i class="bi bi-cart"></i>&nbsp;Add
+                                            </a>
+                                        </div>
+
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="">
+                            <div class="FeaturedProductsCard position-relative">
+                                <div class="position-absolute BestSellCardOffTag">
+                                    <h6>
+                                        Save 10%
+                                    </h6>
+                                </div>
+                                <div class="productcardImage text-center">
+                                    <a href="/product-details/{{ $id }}" wire:navigate>
+                                        <img src="https://grocer.softwaresystems.us/storage/app/public/product/{{ $image }}"
+                                            onerror="this.src='Assets/Images/ERROR/ErrorImage.webp'"
+                                            class="featuredProductImage" alt="{{ $name }}" loading="lazy">
+                                    </a>
+                                </div>
+                                <div class="card-body">
+                                    <p class="categoryname">Fruits</p>
+                                    <div class="nameAndUnitHeading">
+                                        <h1 class="h2 card_heading">Apple</h1>
+                                        <h4>(Kg)</h4>
+                                    </div>
+                                    <livewire:components.rating-stars :rating="$rating" />
+                                    <div class="col d-flex justify-content-start mt-2">
+                                        <div>
+                                            <h1 class="productby1">By</h1>
+                                        </div>
+                                        <div>
+                                            <h1 class="productby2">&nbsp;Grocer</h1>
+                                        </div>
+                                    </div>
+                                    <div class="PriceDivFeaturedProduct mt-2">
+                                        <div class="d-flex">
+                                            <h1 class="pricetag align-self-center">100$
+                                            </h1>
+                                        </div>
+                                        <div class="text-end align-self-center">
+                                            <a class="btn addbutton py-2"
+                                                wire:click.prevent="addToCart('{{ $id }}', '{{ $name }}', '{{ $image }}', '{{ $discountedPrice }}',  @json($variations), '{{ $unit }}')">
+                                                <i class="bi bi-cart"></i>&nbsp;Add
+                                            </a>
+                                        </div>
+
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <!-- {{-- ************Mobile View Featured Card************ --}} -->
+            </div>
+        </div>
+        <!-- {{-- ********************Featured Products****************** --}}
+        {{-- ******************************************************* --}}
+        {{-- ******************************************************* --}}
+        {{-- ******************************************************* --}}
+
+        {{-- **********************Offers*************************** --}} -->
+        <div class="container mt-5 p-0">
+            <!-- @if ($flashDeals) -->
+            <div class="d-flex flex-column flex-md-row justify-content-between align-items-center gap-3">
+                <div class="">
+                    <a href="/promotions" wire:navigate>
+                        <img src="https://grocer.softwaresystems.us/storage/app/public/offer/{{ $flashDeals['image'] }}"
+                            onerror="this.src='Assets/Images/Banner/Offer1.webp'" class="offersBanner" alt="">
+                    </a>
+                </div>
+                <div class="d-none d-md-block">
+                    <a href="/promotions" wire:navigate>
+                        <img src="https://grocer.softwaresystems.us/storage/app/public/offer/{{ $flashDeals['image'] }}"
+                            onerror="this.src='Assets/Images/Banner/Offer1.webp'" class="offersBanner" alt="">
+                    </a>
+                </div>
+            </div>
+            <!-- @endif -->
+        </div>
+        <!-- {{-- **********************Offers************************* --}}
+        {{-- ***************************************************** --}}
+        {{-- ***************************************************** --}}
+        {{-- ***************************************************** --}} -->
+
+        <!-- {{-- ****************Best Sells Products****************** --}} -->
+        <div class="container p-0 dailybestsellSectionContainer" id="DailBestSellSection">
+            <div class="d-flex justify-content-center  justify-content-md-between align-items-center">
+                <div class="daily_best_sells_listing_one">
+                    <div class="">
+                        <h1 class="bestSell_heading h5">Daily Best Sells</h1>
+                    </div>
+                    <div class="align-self-center">
+                        <ul class="d-flex justify-content-between flex-nowrap category_listing2 p-0 gap-3">
+                            <li class="">
+                                <div class="d-flex">
+                                    <input type="radio" value="/popular" class="d-none" id="popular"
+                                        wire:model.live="bestSellId" />
+                                    <label for="popular" role="button"
+                                        class="categoryLabel {{ $bestSellId == '/popular' ? 'Active_category' : '' }}">Best
+                                        Sells</label>
+                                </div>
+                            </li>
+                            <li class="">
+                                <div class="d-flex">
+                                    <input type="radio" value="/trending" class="d-none" id="trending"
+                                        wire:model.live="bestSellId" />
+                                    <label for="trending" role="button"
+                                        class="categoryLabel {{ $bestSellId == '/trending' ? 'Active_category' : '' }}">Trending</label>
+                                </div>
+                            </li>
+                            <li class="">
+                                <div class="d-flex">
+                                    <input type="radio" value="/latest" class="d-none" id="latest"
+                                        wire:model.live="bestSellId" />
+                                    <label for="latest" role="button"
+                                        class="categoryLabel {{ $bestSellId == '/latest' ? 'Active_category' : '' }}">New</label>
+                                </div>
+                            </li>
+                        </ul>
+                    </div>
+                    <!-- @if ($flashDeals) -->
+                    <div>
+                        <div class="expiry category_listing">
+                            Expires in:
+                            <span id="days">0</span> day<span id="days_plural">s</span> :
+                            <span id="hours">0</span> :
+                            <span id="minutes">0</span> :
+                            <span id="seconds">0</span>
+                        </div>
+                    </div>
+                    <!-- @endif -->
+                </div>
+                <!-- {{-- ******************************* --}} -->
+                <div class="daily_best_sells_listing_one_arrowicons">
+                    <div class="category_listing2">
+                        <button class="BestSellProductarrowbtnLeft">
+                            <h2 class="m-0"><i class="bi bi-arrow-left-short"></i></h2>
+                        </button>
+                        <button class="BestSellProductarrowbtnRight">
+                            <h2 class="m-0"><i class="bi bi-arrow-right-short"></i></h2>
+                        </button>
+                    </div>
+                </div>
+            </div>
+
+            <div class="buttonBox_mobileView">
+                <div class="d-flex">
+                    <input type="radio" value="/popular" class="d-none" id="popular" wire:model.live="bestSellId" />
+                    <label for="popular" role="button"
+                        class="{{ $bestSellId == '/popular' ? 'new_button' : '' }} custom-button">Best Sells</label>
+                </div>
+                {{-- <button class="custom-button new_button">Featured</button> --}}
+                <div class="d-flex">
+                    <input type="radio" value="/trending" class="d-none" id="trending" wire:model.live="bestSellId" />
+                    <label for="trending" role="button"
+                        class="{{ $bestSellId == '/trending' ? 'new_button' : '' }} custom-button">Trending</label>
+                </div>
+                <div class="d-flex">
+                    <input type="radio" value="/latest" class="d-none" id="latest" wire:model.live="bestSellId" />
+                    <label for="latest" role="button"
+                        class="{{ $bestSellId == '/latest' ? 'new_button' : '' }} custom-button">New</label>
+                </div>
+            </div>
+            <!-- {{-- *****************Mobile View************** --}} -->
+            <div class="d-flex justify-content-start align-items-center position-relative">
+                <!-- <div wire:loading wire:target="bestSellId">
+                    <div class="spinner-border text-success featuredProductSpinner z-2" role="status">
+                        <span class="visually-hidden">Loading...</span>
+                    </div>
+                </div> -->
+                <div
+                    class="d-flex justify-content-start BestsellProductsSection mt-5  {{ session('token') ? 'customWidth_100' : 'customWidth_80' }}">
+                    <!-- @foreach ($popularProducts as $item) -->
+                    <div class="mt-2">
+                        <div class="BestSellCard position-relative mb-sm-5 mb-md-2 mb-lg-0">
+                            <div class="position-absolute BestSellCardOffTag">
+                                <h6>
+                                    Save 10%
+                                </h6>
+                            </div>
+                            <div class="BestSellCardImage">
+                                <a href="/product-details/{{ $id }}" wire:navigate>
+                                    <img src="https://grocer.softwaresystems.us/storage/app/public/product/{{ $image }}"
+                                        onerror="this.src='Assets/Images/ERROR/ErrorImage.webp'" class=""
+                                        alt="{{ $name }}">
+                                </a>
+                            </div>
+                            <div class="card-body">
+                                <p class="BestSellCardName">Fruits</p>
+                                <div class="bestSellCardNameAndUnitHeadingMain">
+                                    <h1 class="h2 BestSellCardHeading">Orange</h1>
+                                    <h4>(PC)</h4>
+                                </div>
+                                <livewire:components.rating-stars :rating="$rating" />
+                                <div class="col d-flex justify-content-start">
+                                    <div>
+                                        <h1 class="BestSellCardProductby1">By</h1>
+                                    </div>
+                                    <div>
+                                        <h1 class="BestSellCardProductby2">&nbsp;Grocer</h1>
+                                    </div>
+                                </div>
+                                <div class="row mt-2">
+                                    <div class="col d-flex">
+                                        <h1 class="BestSellCardPriceTag align-self-center">
+                                            100$
+                                        </h1>
+                                        <h3 class="BestSellCardCrossPriceTag align-self-center">
+                                            &nbsp;&nbsp;<del>100$</del>
+                                        </h3>
+                                    </div>
+                                </div>
+                                <div class="col">
+                                    <div class="progress BestSellCardProgressMain">
+                                        <div class="progress-bar BestSellCardProgress" role="progressbar"
+                                            aria-label="Example with label" style="width: 25%;" aria-valuenow="25"
+                                            aria-valuemin="0" aria-valuemax="100"></div>
+                                    </div>
+                                    <h6 class="progressstatus">Sold: 20/50</h6>
+                                </div>
+                                <div class="col text-center align-self-center mt-2">
+                                    <button class="btn BestSellCardAddButton py-2 w-100"
+                                        wire:click.prevent="addToCart('{{ $id }}',  '{{ $name }}', '{{ $image }}', '{{ $discountedPrice }}',  @json($variations), '{{ $unit }}')">
+                                        <i class="bi bi-cart"></i>&nbsp;Add
+                                    </button>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="mt-2">
+                        <div class="BestSellCard position-relative mb-sm-5 mb-md-2 mb-lg-0">
+                            <div class="position-absolute BestSellCardOffTag">
+                                <h6>
+                                    Save 10%
+                                </h6>
+                            </div>
+                            <div class="BestSellCardImage">
+                                <a href="/product-details/{{ $id }}" wire:navigate>
+                                    <img src="https://grocer.softwaresystems.us/storage/app/public/product/{{ $image }}"
+                                        onerror="this.src='Assets/Images/ERROR/ErrorImage.webp'" class=""
+                                        alt="{{ $name }}">
+                                </a>
+                            </div>
+                            <div class="card-body">
+                                <p class="BestSellCardName">Fruits</p>
+                                <div class="bestSellCardNameAndUnitHeadingMain">
+                                    <h1 class="h2 BestSellCardHeading">Orange</h1>
+                                    <h4>(PC)</h4>
+                                </div>
+                                <livewire:components.rating-stars :rating="$rating" />
+                                <div class="col d-flex justify-content-start">
+                                    <div>
+                                        <h1 class="BestSellCardProductby1">By</h1>
+                                    </div>
+                                    <div>
+                                        <h1 class="BestSellCardProductby2">&nbsp;Grocer</h1>
+                                    </div>
+                                </div>
+                                <div class="row mt-2">
+                                    <div class="col d-flex">
+                                        <h1 class="BestSellCardPriceTag align-self-center">
+                                            100$
+                                        </h1>
+                                        <h3 class="BestSellCardCrossPriceTag align-self-center">
+                                            &nbsp;&nbsp;<del>100$</del>
+                                        </h3>
+                                    </div>
+                                </div>
+                                <div class="col">
+                                    <div class="progress BestSellCardProgressMain">
+                                        <div class="progress-bar BestSellCardProgress" role="progressbar"
+                                            aria-label="Example with label" style="width: 25%;" aria-valuenow="25"
+                                            aria-valuemin="0" aria-valuemax="100"></div>
+                                    </div>
+                                    <h6 class="progressstatus">Sold: 20/50</h6>
+                                </div>
+                                <div class="col text-center align-self-center mt-2">
+                                    <button class="btn BestSellCardAddButton py-2 w-100"
+                                        wire:click.prevent="addToCart('{{ $id }}',  '{{ $name }}', '{{ $image }}', '{{ $discountedPrice }}',  @json($variations), '{{ $unit }}')">
+                                        <i class="bi bi-cart"></i>&nbsp;Add
+                                    </button>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="mt-2">
+                        <div class="BestSellCard position-relative mb-sm-5 mb-md-2 mb-lg-0">
+                            <div class="position-absolute BestSellCardOffTag">
+                                <h6>
+                                    Save 10%
+                                </h6>
+                            </div>
+                            <div class="BestSellCardImage">
+                                <a href="/product-details/{{ $id }}" wire:navigate>
+                                    <img src="https://grocer.softwaresystems.us/storage/app/public/product/{{ $image }}"
+                                        onerror="this.src='Assets/Images/ERROR/ErrorImage.webp'" class=""
+                                        alt="{{ $name }}">
+                                </a>
+                            </div>
+                            <div class="card-body">
+                                <p class="BestSellCardName">Fruits</p>
+                                <div class="bestSellCardNameAndUnitHeadingMain">
+                                    <h1 class="h2 BestSellCardHeading">Orange</h1>
+                                    <h4>(PC)</h4>
+                                </div>
+                                <livewire:components.rating-stars :rating="$rating" />
+                                <div class="col d-flex justify-content-start">
+                                    <div>
+                                        <h1 class="BestSellCardProductby1">By</h1>
+                                    </div>
+                                    <div>
+                                        <h1 class="BestSellCardProductby2">&nbsp;Grocer</h1>
+                                    </div>
+                                </div>
+                                <div class="row mt-2">
+                                    <div class="col d-flex">
+                                        <h1 class="BestSellCardPriceTag align-self-center">
+                                            100$
+                                        </h1>
+                                        <h3 class="BestSellCardCrossPriceTag align-self-center">
+                                            &nbsp;&nbsp;<del>100$</del>
+                                        </h3>
+                                    </div>
+                                </div>
+                                <div class="col">
+                                    <div class="progress BestSellCardProgressMain">
+                                        <div class="progress-bar BestSellCardProgress" role="progressbar"
+                                            aria-label="Example with label" style="width: 25%;" aria-valuenow="25"
+                                            aria-valuemin="0" aria-valuemax="100"></div>
+                                    </div>
+                                    <h6 class="progressstatus">Sold: 20/50</h6>
+                                </div>
+                                <div class="col text-center align-self-center mt-2">
+                                    <button class="btn BestSellCardAddButton py-2 w-100"
+                                        wire:click.prevent="addToCart('{{ $id }}',  '{{ $name }}', '{{ $image }}', '{{ $discountedPrice }}',  @json($variations), '{{ $unit }}')">
+                                        <i class="bi bi-cart"></i>&nbsp;Add
+                                    </button>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="mt-2">
+                        <div class="BestSellCard position-relative mb-sm-5 mb-md-2 mb-lg-0">
+                            <div class="position-absolute BestSellCardOffTag">
+                                <h6>
+                                    Save 10%
+                                </h6>
+                            </div>
+                            <div class="BestSellCardImage">
+                                <a href="/product-details/{{ $id }}" wire:navigate>
+                                    <img src="https://grocer.softwaresystems.us/storage/app/public/product/{{ $image }}"
+                                        onerror="this.src='Assets/Images/ERROR/ErrorImage.webp'" class=""
+                                        alt="{{ $name }}">
+                                </a>
+                            </div>
+                            <div class="card-body">
+                                <p class="BestSellCardName">Fruits</p>
+                                <div class="bestSellCardNameAndUnitHeadingMain">
+                                    <h1 class="h2 BestSellCardHeading">Orange</h1>
+                                    <h4>(PC)</h4>
+                                </div>
+                                <livewire:components.rating-stars :rating="$rating" />
+                                <div class="col d-flex justify-content-start">
+                                    <div>
+                                        <h1 class="BestSellCardProductby1">By</h1>
+                                    </div>
+                                    <div>
+                                        <h1 class="BestSellCardProductby2">&nbsp;Grocer</h1>
+                                    </div>
+                                </div>
+                                <div class="row mt-2">
+                                    <div class="col d-flex">
+                                        <h1 class="BestSellCardPriceTag align-self-center">
+                                            100$
+                                        </h1>
+                                        <h3 class="BestSellCardCrossPriceTag align-self-center">
+                                            &nbsp;&nbsp;<del>100$</del>
+                                        </h3>
+                                    </div>
+                                </div>
+                                <div class="col">
+                                    <div class="progress BestSellCardProgressMain">
+                                        <div class="progress-bar BestSellCardProgress" role="progressbar"
+                                            aria-label="Example with label" style="width: 25%;" aria-valuenow="25"
+                                            aria-valuemin="0" aria-valuemax="100"></div>
+                                    </div>
+                                    <h6 class="progressstatus">Sold: 20/50</h6>
+                                </div>
+                                <div class="col text-center align-self-center mt-2">
+                                    <button class="btn BestSellCardAddButton py-2 w-100"
+                                        wire:click.prevent="addToCart('{{ $id }}',  '{{ $name }}', '{{ $image }}', '{{ $discountedPrice }}',  @json($variations), '{{ $unit }}')">
+                                        <i class="bi bi-cart"></i>&nbsp;Add
+                                    </button>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <!-- @endforeach -->
+                </div>
+                <!-- @if (!session('token')) -->
+                <div class="mt-4">
+                    <div class="mt-3">
+                        <div class="OffCard">
+                            <h1 class="OffCardPercentHeading">10% OFF</h1>
+                            <p class="OffCardPercentDescription">For new member sign up at the first time</p>
+                            <div class="card-body">
+                                <form class="mt-2">
+                                    <label for="email" class="offcardLabel">Email Address*</label>
+                                    <div class="input-group mb-3 mt-2">
+                                        <span class="input-group-text OffCardInputIconsBox">
+                                            <img src="Assets/Images/SmallIcons/MainInp.webp" alt="">
+                                        </span>
+                                        <input type="text" wire:model="email" class="form-control OffCardInput"
+                                            id="floatingInputGroup1" placeholder="johndoe@gmail.com">
+                                    </div>
+                                    <label for="password" class="offcardLabel">Password*</label>
+                                    <div class="input-group mb-3 mt-2">
+                                        <span class="input-group-text OffCardInputIconsBox">
+                                            <img src="Assets/Images/SmallIcons/PasswordKeyInp.webp" alt="">
+                                        </span>
+                                        <input type="password" wire:model="password" class="form-control OffCardInput"
+                                            id="" placeholder="Maximum 8 characters">
+                                    </div>
+                                    <div class="col text-center align-self-center mt-3">
+                                        <button class="btn offcardbtn py-2 w-100" type="button"
+                                            wire:click="validateForm">Register
+                                            Now</button>
+                                    </div>
+                                </form>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <!-- @endif -->
+            </div>
+            <div class="BestsellProductsSectionMV">
+                <!-- @foreach ($popularProducts as $item) -->
+                <div class="col-12 mt-2">
+                    <div class="BestSellCard position-relative mb-sm-5 mb-md-2 mb-lg-0">
+                        <div class="position-absolute BestSellCardOffTag">
+                            <h6>
+                                Save 10%
+                            </h6>
+                        </div>
+                        <div class="BestSellCardImage">
+                            <a href="/product-details/{{ $id }}" wire:navigate>
+                                <img src="https://grocer.softwaresystems.us/storage/app/public/product/{{ $image }}"
+                                    onerror="this.src='Assets/Images/ERROR/ErrorImage.webp'" class="" alt="{{ $name }}">
+                            </a>
+                        </div>
+                        <div class="card-body">
+                            <p class="BestSellCardName">Fruits</p>
+                            <div class="bestSellCardNameAndUnitHeadingMain">
+                                <h1 class="h2 BestSellCardHeading">Orange</h1>
+                                <h4>(PC)</h4>
+                            </div>
+                            <livewire:components.rating-stars :rating="$rating" />
+                            <div class="col d-flex justify-content-start">
+                                <div>
+                                    <h1 class="BestSellCardProductby1">By</h1>
+                                </div>
+                                <div>
+                                    <h1 class="BestSellCardProductby2">&nbsp;Grocer</h1>
+                                </div>
+                            </div>
+                            <div class="row mt-2">
+                                <div class="col d-flex">
+                                    <h1 class="BestSellCardPriceTag align-self-center">
+                                        100$
+                                    </h1>
+                                    <h3 class="BestSellCardCrossPriceTag align-self-center">
+                                        &nbsp;&nbsp;<del>100$</del>
+                                    </h3>
+                                </div>
+                            </div>
+                            <div class="col">
+                                <div class="progress BestSellCardProgressMain">
+                                    <div class="progress-bar BestSellCardProgress" role="progressbar"
+                                        aria-label="Example with label" style="width: 25%;" aria-valuenow="25"
+                                        aria-valuemin="0" aria-valuemax="100"></div>
+                                </div>
+                                <h6 class="progressstatus">Sold: 20/50</h6>
+                            </div>
+                            <div class="col text-center align-self-center mt-2">
+                                <button class="btn BestSellCardAddButton py-2 w-100"
+                                    wire:click.prevent="addToCart('{{ $id }}',  '{{ $name }}', '{{ $image }}', '{{ $discountedPrice }}',  @json($variations), '{{ $unit }}')">
+                                    <i class="bi bi-cart"></i>&nbsp;Add
+                                </button>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <!-- @endforeach -->
+            </div>
+        </div>
+        <!-- {{-- *****************Best Sells Products**************** --}}
+        {{-- **************************************************** --}}
+        {{-- **************************************************** --}}
+        {{-- **************************************************** --}} -->
+        <div class="container LasthomecardsMainContainer">
+            <div class="row">
+                <div class="col-sm-12 col-md-12 col-lg-3 mt-3">
+                    <h1 class="topsellHeading">Top Sells</h1>
+                    <div class="progress HomeProgressmain">
+                        <div class="progress-bar HomeProgress" role="progressbar" aria-label="Example with label"
+                            style="width: 50%;" aria-valuenow="50" aria-valuemin="0" aria-valuemax="100"></div>
+                    </div>
+                    <div class="row">
+                        <div class="lastHomeCardMainDiv mt-3">
+                            <div class="homeLastCardTag">
+                                <h6>
+                                    Save 9%
+                                </h6>
+                            </div>
+                            <div class="card_img p-1">
+                                <a href="/product-details/{{ $id }}" wire:navigate>
+                                    <img src="https://grocer.softwaresystems.us/storage/app/public/product/{{ $image }}"
+                                        onerror="this.src='Assets/Images/ERROR/ErrorImage.webp'" class=""
+                                        alt="{{ $name }}" loading="lazy">
+                                </a>
+                            </div>
+                            <div class="lastHomeCardContentMain p-3">
+                                <div class="homelastCardNameAndUnitMain">
+                                    <h1 class="h2 lastcard_heading">Apple</h1>
+                                    <h4>(PC)</h4>
+                                </div>
+                                <livewire:components.rating-stars :rating="$rating" />
+                                <div class="homelastCardPriceAndCartBtn mt-2">
+                                    <div class="d-flex">
+                                        <h1 class="LastCardPriceTag align-self-center">90$
+                                        </h1>
+                                        <h3 class="LastCardCrossPriceTag align-self-center">
+                                            &nbsp;&nbsp;<del>100$</del></h3>
+                                    </div>
+                                    <div class="text-center align-self-center">
+                                        <button class="LastCardAddButton"
+                                            wire:click.prevent="addToCart('{{ $id }}',  '{{ $name }}', '{{ $image }}', '{{ $discountedPrice }}',  @json($variations), '{{ $unit }}')">
+                                            <i class="bi bi-cart"></i>Add
+                                        </button>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="lastHomeCardMainDiv mt-3">
+                            <div class="homeLastCardTag">
+                                <h6>
+                                    Save 9%
+                                </h6>
+                            </div>
+                            <div class="card_img p-1">
+                                <a href="/product-details/{{ $id }}" wire:navigate>
+                                    <img src="https://grocer.softwaresystems.us/storage/app/public/product/{{ $image }}"
+                                        onerror="this.src='Assets/Images/ERROR/ErrorImage.webp'" class=""
+                                        alt="{{ $name }}" loading="lazy">
+                                </a>
+                            </div>
+                            <div class="lastHomeCardContentMain p-3">
+                                <div class="homelastCardNameAndUnitMain">
+                                    <h1 class="h2 lastcard_heading">Apple</h1>
+                                    <h4>(PC)</h4>
+                                </div>
+                                <livewire:components.rating-stars :rating="$rating" />
+                                <div class="homelastCardPriceAndCartBtn mt-2">
+                                    <div class="d-flex">
+                                        <h1 class="LastCardPriceTag align-self-center">90$
+                                        </h1>
+                                        <h3 class="LastCardCrossPriceTag align-self-center">
+                                            &nbsp;&nbsp;<del>100$</del></h3>
+                                    </div>
+                                    <div class="text-center align-self-center">
+                                        <button class="LastCardAddButton"
+                                            wire:click.prevent="addToCart('{{ $id }}',  '{{ $name }}', '{{ $image }}', '{{ $discountedPrice }}',  @json($variations), '{{ $unit }}')">
+                                            <i class="bi bi-cart"></i>Add
+                                        </button>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="lastHomeCardMainDiv mt-3">
+                            <div class="homeLastCardTag">
+                                <h6>
+                                    Save 9%
+                                </h6>
+                            </div>
+                            <div class="card_img p-1">
+                                <a href="/product-details/{{ $id }}" wire:navigate>
+                                    <img src="https://grocer.softwaresystems.us/storage/app/public/product/{{ $image }}"
+                                        onerror="this.src='Assets/Images/ERROR/ErrorImage.webp'" class=""
+                                        alt="{{ $name }}" loading="lazy">
+                                </a>
+                            </div>
+                            <div class="lastHomeCardContentMain p-3">
+                                <div class="homelastCardNameAndUnitMain">
+                                    <h1 class="h2 lastcard_heading">Apple</h1>
+                                    <h4>(PC)</h4>
+                                </div>
+                                <livewire:components.rating-stars :rating="$rating" />
+                                <div class="homelastCardPriceAndCartBtn mt-2">
+                                    <div class="d-flex">
+                                        <h1 class="LastCardPriceTag align-self-center">90$
+                                        </h1>
+                                        <h3 class="LastCardCrossPriceTag align-self-center">
+                                            &nbsp;&nbsp;<del>100$</del></h3>
+                                    </div>
+                                    <div class="text-center align-self-center">
+                                        <button class="LastCardAddButton"
+                                            wire:click.prevent="addToCart('{{ $id }}',  '{{ $name }}', '{{ $image }}', '{{ $discountedPrice }}',  @json($variations), '{{ $unit }}')">
+                                            <i class="bi bi-cart"></i>Add
+                                        </button>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <!-- {{-- ************************************* --}} -->
+                <div class="col-sm-12 col-md-12 col-lg-3 mt-3">
+                    <h1 class="topsellHeading">Top Rated</h1>
+                    <div class="progress HomeProgressmain">
+                        <div class="progress-bar HomeProgress" role="progressbar" aria-label="Example with label"
+                            style="width: 50%;" aria-valuenow="50" aria-valuemin="0" aria-valuemax="100"></div>
+                    </div>
+                    <div class="row">
+                        <div class="lastHomeCardMainDiv mt-3">
+                            <div class="homeLastCardTag">
+                                <h6>
+                                    Save 9%
+                                </h6>
+                            </div>
+                            <div class="card_img p-1">
+                                <a href="/product-details/{{ $id }}" wire:navigate>
+                                    <img src="https://grocer.softwaresystems.us/storage/app/public/product/{{ $image }}"
+                                        onerror="this.src='Assets/Images/ERROR/ErrorImage.webp'" class=""
+                                        alt="{{ $name }}" loading="lazy">
+                                </a>
+                            </div>
+                            <div class="lastHomeCardContentMain p-3">
+                                <div class="homelastCardNameAndUnitMain">
+                                    <h1 class="h2 lastcard_heading">Apple</h1>
+                                    <h4>(PC)</h4>
+                                </div>
+                                <livewire:components.rating-stars :rating="$rating" />
+                                <div class="homelastCardPriceAndCartBtn mt-2">
+                                    <div class="d-flex">
+                                        <h1 class="LastCardPriceTag align-self-center">90$
+                                        </h1>
+                                        <h3 class="LastCardCrossPriceTag align-self-center">
+                                            &nbsp;&nbsp;<del>100$</del></h3>
+                                    </div>
+                                    <div class="text-center align-self-center">
+                                        <button class="LastCardAddButton"
+                                            wire:click.prevent="addToCart('{{ $id }}',  '{{ $name }}', '{{ $image }}', '{{ $discountedPrice }}',  @json($variations), '{{ $unit }}')">
+                                            <i class="bi bi-cart"></i>Add
+                                        </button>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="lastHomeCardMainDiv mt-3">
+                            <div class="homeLastCardTag">
+                                <h6>
+                                    Save 9%
+                                </h6>
+                            </div>
+                            <div class="card_img p-1">
+                                <a href="/product-details/{{ $id }}" wire:navigate>
+                                    <img src="https://grocer.softwaresystems.us/storage/app/public/product/{{ $image }}"
+                                        onerror="this.src='Assets/Images/ERROR/ErrorImage.webp'" class=""
+                                        alt="{{ $name }}" loading="lazy">
+                                </a>
+                            </div>
+                            <div class="lastHomeCardContentMain p-3">
+                                <div class="homelastCardNameAndUnitMain">
+                                    <h1 class="h2 lastcard_heading">Apple</h1>
+                                    <h4>(PC)</h4>
+                                </div>
+                                <livewire:components.rating-stars :rating="$rating" />
+                                <div class="homelastCardPriceAndCartBtn mt-2">
+                                    <div class="d-flex">
+                                        <h1 class="LastCardPriceTag align-self-center">90$
+                                        </h1>
+                                        <h3 class="LastCardCrossPriceTag align-self-center">
+                                            &nbsp;&nbsp;<del>100$</del></h3>
+                                    </div>
+                                    <div class="text-center align-self-center">
+                                        <button class="LastCardAddButton"
+                                            wire:click.prevent="addToCart('{{ $id }}',  '{{ $name }}', '{{ $image }}', '{{ $discountedPrice }}',  @json($variations), '{{ $unit }}')">
+                                            <i class="bi bi-cart"></i>Add
+                                        </button>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="lastHomeCardMainDiv mt-3">
+                            <div class="homeLastCardTag">
+                                <h6>
+                                    Save 9%
+                                </h6>
+                            </div>
+                            <div class="card_img p-1">
+                                <a href="/product-details/{{ $id }}" wire:navigate>
+                                    <img src="https://grocer.softwaresystems.us/storage/app/public/product/{{ $image }}"
+                                        onerror="this.src='Assets/Images/ERROR/ErrorImage.webp'" class=""
+                                        alt="{{ $name }}" loading="lazy">
+                                </a>
+                            </div>
+                            <div class="lastHomeCardContentMain p-3">
+                                <div class="homelastCardNameAndUnitMain">
+                                    <h1 class="h2 lastcard_heading">Apple</h1>
+                                    <h4>(PC)</h4>
+                                </div>
+                                <livewire:components.rating-stars :rating="$rating" />
+                                <div class="homelastCardPriceAndCartBtn mt-2">
+                                    <div class="d-flex">
+                                        <h1 class="LastCardPriceTag align-self-center">90$
+                                        </h1>
+                                        <h3 class="LastCardCrossPriceTag align-self-center">
+                                            &nbsp;&nbsp;<del>100$</del></h3>
+                                    </div>
+                                    <div class="text-center align-self-center">
+                                        <button class="LastCardAddButton"
+                                            wire:click.prevent="addToCart('{{ $id }}',  '{{ $name }}', '{{ $image }}', '{{ $discountedPrice }}',  @json($variations), '{{ $unit }}')">
+                                            <i class="bi bi-cart"></i>Add
+                                        </button>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <!-- {{-- ************************************* --}} -->
+                <div class="col-sm-12 col-md-12 col-lg-3 mt-3">
+                    <h1 class="topsellHeading">Trending Items</h1>
+                    <div class="progress HomeProgressmain">
+                        <div class="progress-bar HomeProgress" role="progressbar" aria-label="Example with label"
+                            style="width: 50%;" aria-valuenow="50" aria-valuemin="0" aria-valuemax="100"></div>
+                    </div>
+                    <div class="row">
+                        <div class="lastHomeCardMainDiv mt-3">
+                            <div class="homeLastCardTag">
+                                <h6>
+                                    Save 9%
+                                </h6>
+                            </div>
+                            <div class="card_img p-1">
+                                <a href="/product-details/{{ $id }}" wire:navigate>
+                                    <img src="https://grocer.softwaresystems.us/storage/app/public/product/{{ $image }}"
+                                        onerror="this.src='Assets/Images/ERROR/ErrorImage.webp'" class=""
+                                        alt="{{ $name }}" loading="lazy">
+                                </a>
+                            </div>
+                            <div class="lastHomeCardContentMain p-3">
+                                <div class="homelastCardNameAndUnitMain">
+                                    <h1 class="h2 lastcard_heading">Apple</h1>
+                                    <h4>(PC)</h4>
+                                </div>
+                                <livewire:components.rating-stars :rating="$rating" />
+                                <div class="homelastCardPriceAndCartBtn mt-2">
+                                    <div class="d-flex">
+                                        <h1 class="LastCardPriceTag align-self-center">90$
+                                        </h1>
+                                        <h3 class="LastCardCrossPriceTag align-self-center">
+                                            &nbsp;&nbsp;<del>100$</del></h3>
+                                    </div>
+                                    <div class="text-center align-self-center">
+                                        <button class="LastCardAddButton"
+                                            wire:click.prevent="addToCart('{{ $id }}',  '{{ $name }}', '{{ $image }}', '{{ $discountedPrice }}',  @json($variations), '{{ $unit }}')">
+                                            <i class="bi bi-cart"></i>Add
+                                        </button>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="lastHomeCardMainDiv mt-3">
+                            <div class="homeLastCardTag">
+                                <h6>
+                                    Save 9%
+                                </h6>
+                            </div>
+                            <div class="card_img p-1">
+                                <a href="/product-details/{{ $id }}" wire:navigate>
+                                    <img src="https://grocer.softwaresystems.us/storage/app/public/product/{{ $image }}"
+                                        onerror="this.src='Assets/Images/ERROR/ErrorImage.webp'" class=""
+                                        alt="{{ $name }}" loading="lazy">
+                                </a>
+                            </div>
+                            <div class="lastHomeCardContentMain p-3">
+                                <div class="homelastCardNameAndUnitMain">
+                                    <h1 class="h2 lastcard_heading">Apple</h1>
+                                    <h4>(PC)</h4>
+                                </div>
+                                <livewire:components.rating-stars :rating="$rating" />
+                                <div class="homelastCardPriceAndCartBtn mt-2">
+                                    <div class="d-flex">
+                                        <h1 class="LastCardPriceTag align-self-center">90$
+                                        </h1>
+                                        <h3 class="LastCardCrossPriceTag align-self-center">
+                                            &nbsp;&nbsp;<del>100$</del></h3>
+                                    </div>
+                                    <div class="text-center align-self-center">
+                                        <button class="LastCardAddButton"
+                                            wire:click.prevent="addToCart('{{ $id }}',  '{{ $name }}', '{{ $image }}', '{{ $discountedPrice }}',  @json($variations), '{{ $unit }}')">
+                                            <i class="bi bi-cart"></i>Add
+                                        </button>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="lastHomeCardMainDiv mt-3">
+                            <div class="homeLastCardTag">
+                                <h6>
+                                    Save 9%
+                                </h6>
+                            </div>
+                            <div class="card_img p-1">
+                                <a href="/product-details/{{ $id }}" wire:navigate>
+                                    <img src="https://grocer.softwaresystems.us/storage/app/public/product/{{ $image }}"
+                                        onerror="this.src='Assets/Images/ERROR/ErrorImage.webp'" class=""
+                                        alt="{{ $name }}" loading="lazy">
+                                </a>
+                            </div>
+                            <div class="lastHomeCardContentMain p-3">
+                                <div class="homelastCardNameAndUnitMain">
+                                    <h1 class="h2 lastcard_heading">Apple</h1>
+                                    <h4>(PC)</h4>
+                                </div>
+                                <livewire:components.rating-stars :rating="$rating" />
+                                <div class="homelastCardPriceAndCartBtn mt-2">
+                                    <div class="d-flex">
+                                        <h1 class="LastCardPriceTag align-self-center">90$
+                                        </h1>
+                                        <h3 class="LastCardCrossPriceTag align-self-center">
+                                            &nbsp;&nbsp;<del>100$</del></h3>
+                                    </div>
+                                    <div class="text-center align-self-center">
+                                        <button class="LastCardAddButton"
+                                            wire:click.prevent="addToCart('{{ $id }}',  '{{ $name }}', '{{ $image }}', '{{ $discountedPrice }}',  @json($variations), '{{ $unit }}')">
+                                            <i class="bi bi-cart"></i>Add
+                                        </button>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <!-- {{-- ************************************* --}} -->
+                <div class="col-sm-12 col-md-12 col-lg-3 mt-3">
+                    <h1 class="topsellHeading">Recently Added</h1>
+                    <div class="progress HomeProgressmain">
+                        <div class="progress-bar HomeProgress" role="progressbar" aria-label="Example with label"
+                            style="width: 50%;" aria-valuenow="50" aria-valuemin="0" aria-valuemax="100"></div>
+                    </div>
+                    <div class="row">
+                        <div class="lastHomeCardMainDiv mt-3">
+                            <div class="homeLastCardTag">
+                                <h6>
+                                    Save 9%
+                                </h6>
+                            </div>
+                            <div class="card_img p-1">
+                                <a href="/product-details/{{ $id }}" wire:navigate>
+                                    <img src="https://grocer.softwaresystems.us/storage/app/public/product/{{ $image }}"
+                                        onerror="this.src='Assets/Images/ERROR/ErrorImage.webp'" class=""
+                                        alt="{{ $name }}" loading="lazy">
+                                </a>
+                            </div>
+                            <div class="lastHomeCardContentMain p-3">
+                                <div class="homelastCardNameAndUnitMain">
+                                    <h1 class="h2 lastcard_heading">Apple</h1>
+                                    <h4>(PC)</h4>
+                                </div>
+                                <livewire:components.rating-stars :rating="$rating" />
+                                <div class="homelastCardPriceAndCartBtn mt-2">
+                                    <div class="d-flex">
+                                        <h1 class="LastCardPriceTag align-self-center">90$
+                                        </h1>
+                                        <h3 class="LastCardCrossPriceTag align-self-center">
+                                            &nbsp;&nbsp;<del>100$</del></h3>
+                                    </div>
+                                    <div class="text-center align-self-center">
+                                        <button class="LastCardAddButton"
+                                            wire:click.prevent="addToCart('{{ $id }}',  '{{ $name }}', '{{ $image }}', '{{ $discountedPrice }}',  @json($variations), '{{ $unit }}')">
+                                            <i class="bi bi-cart"></i>Add
+                                        </button>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="lastHomeCardMainDiv mt-3">
+                            <div class="homeLastCardTag">
+                                <h6>
+                                    Save 9%
+                                </h6>
+                            </div>
+                            <div class="card_img p-1">
+                                <a href="/product-details/{{ $id }}" wire:navigate>
+                                    <img src="https://grocer.softwaresystems.us/storage/app/public/product/{{ $image }}"
+                                        onerror="this.src='Assets/Images/ERROR/ErrorImage.webp'" class=""
+                                        alt="{{ $name }}" loading="lazy">
+                                </a>
+                            </div>
+                            <div class="lastHomeCardContentMain p-3">
+                                <div class="homelastCardNameAndUnitMain">
+                                    <h1 class="h2 lastcard_heading">Apple</h1>
+                                    <h4>(PC)</h4>
+                                </div>
+                                <livewire:components.rating-stars :rating="$rating" />
+                                <div class="homelastCardPriceAndCartBtn mt-2">
+                                    <div class="d-flex">
+                                        <h1 class="LastCardPriceTag align-self-center">90$
+                                        </h1>
+                                        <h3 class="LastCardCrossPriceTag align-self-center">
+                                            &nbsp;&nbsp;<del>100$</del></h3>
+                                    </div>
+                                    <div class="text-center align-self-center">
+                                        <button class="LastCardAddButton"
+                                            wire:click.prevent="addToCart('{{ $id }}',  '{{ $name }}', '{{ $image }}', '{{ $discountedPrice }}',  @json($variations), '{{ $unit }}')">
+                                            <i class="bi bi-cart"></i>Add
+                                        </button>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="lastHomeCardMainDiv mt-3">
+                            <div class="homeLastCardTag">
+                                <h6>
+                                    Save 9%
+                                </h6>
+                            </div>
+                            <div class="card_img p-1">
+                                <a href="/product-details/{{ $id }}" wire:navigate>
+                                    <img src="https://grocer.softwaresystems.us/storage/app/public/product/{{ $image }}"
+                                        onerror="this.src='Assets/Images/ERROR/ErrorImage.webp'" class=""
+                                        alt="{{ $name }}" loading="lazy">
+                                </a>
+                            </div>
+                            <div class="lastHomeCardContentMain p-3">
+                                <div class="homelastCardNameAndUnitMain">
+                                    <h1 class="h2 lastcard_heading">Apple</h1>
+                                    <h4>(PC)</h4>
+                                </div>
+                                <livewire:components.rating-stars :rating="$rating" />
+                                <div class="homelastCardPriceAndCartBtn mt-2">
+                                    <div class="d-flex">
+                                        <h1 class="LastCardPriceTag align-self-center">90$
+                                        </h1>
+                                        <h3 class="LastCardCrossPriceTag align-self-center">
+                                            &nbsp;&nbsp;<del>100$</del></h3>
+                                    </div>
+                                    <div class="text-center align-self-center">
+                                        <button class="LastCardAddButton"
+                                            wire:click.prevent="addToCart('{{ $id }}',  '{{ $name }}', '{{ $image }}', '{{ $discountedPrice }}',  @json($variations), '{{ $unit }}')">
+                                            <i class="bi bi-cart"></i>Add
+                                        </button>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <!--********** UPPER FOOTER **********-->
+    <div class="container-fluid upperFooter">
+        <div class="container">
+
+            <div class="row banner_playstoreApp">
+                <!-- {{-- ************************************** --}} -->
+                <div class="col DownloadAppsDescription">
+                    <h1 class="mainheading_upperfooter">Shop Faster With GROCER App</h1>
+                    <p class="paragraph_upperfooter mt-sm-2 mt-md-2 mt-lg-5">Available on both IOS & Android</p>
+                    <div class="row mt-sm-2 mt-md-2 mt-lg-5">
+                        <div class="col">
+                            <img src="Assets/Images/Icons/AppStoreIcon.webp" class="img-fluid w-100" alt="">
+                        </div>
+                        <div class="col">
+                            <img src="Assets/Images/Icons/AppStoreIcon.webp" class="img-fluid w-100" alt="">
+                        </div>
+                    </div>
+                </div>
+                <!-- {{-- ************************************** --}} -->
+                <div class="col Mobileview">
+                    <img src="Assets/Images/Icons/MobileApp.webp" class="img-fluid w-100" alt="">
+                </div>
+            </div>
+        </div>
+    </div>
+    <!--********** UPPER FOOTER **********-->
+
+    <!--********* SERVICES *********-->
+    <div class="container mt-5">
+        <div class="row last_container">
+            <div class="col-sm-12 col-md-6 col-lg-3 services_Boxes mt-5 mt-md-0">
+                <div class="row box_last">
+                    <div class="col-2 self-center">
+                        <img src="Assets/Images/Icons/delivery-truck.webp" alt="">
+                    </div>
+                    <div class="col-10">
+                        <h3 class="last_container_heading">Free Shipping</h3>
+                        <p class="last_container_para">Free shipping on all your order</p>
+                    </div>
+                </div>
+            </div>
+            <div class="col-sm-12 col-md-6 col-lg-3 services_Boxes">
+                <div class="row box_last">
+                    <div class="col-2 self-center">
+                        <img src="Assets/Images/Icons/Vector.webp" alt="">
+                    </div>
+                    <div class="col-10">
+                        <h3 class="last_container_heading">Customer Support 24/7</h3>
+                        <p class="last_container_para">Instant access to Support</p>
+                    </div>
+                </div>
+            </div>
+            <div class="col-sm-12 col-md-6 col-lg-3 services_Boxes">
+                <div class="row box_last">
+                    <div class="col-2 self-center">
+                        <img src="Assets/Images/Icons/securePaymentCart.webp" alt="">
+                    </div>
+                    <div class="col-10">
+                        <h3 class="last_container_heading">100% Secure Payment</h3>
+                        <p class="last_container_para">We ensure your money is save</p>
+                    </div>
+                </div>
+            </div>
+            <div class="col-sm-12 col-md-6 col-lg-3 services_Boxes">
+                <div class="row box_last">
+                    <div class="col-2 self-center">
+                        <img src="Assets/Images/Icons/box.webp" alt="">
+                    </div>
+                    <div class="col-10">
+                        <h3 class="last_container_heading">Money-Back Guarantee</h3>
+                        <p class="last_container_para">30 Days Money-Back Guarantee</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <hr class="mt-3 last_line">
+    </div>
+    <!--********* SERVICES *********-->
+
+    <!--********* FOOTER *********-->
+    <div class="container footermainWrapper">
+        <div class="row">
+            <div class="col-sm-12 col-md-12 col-lg-5">
+                <ul class="p-0">
+                    <li class="mb-4">
+                        <img src="https://grocer.softwaresystems.us/storage/app/public/restaurant/{{ $logo }}"
+                            onerror="this.src='Assets/Images/Icons/GrocerLogo.webp'" class="footer_logo" alt="grocer"
+                            loading="lazy">
+                    </li>
+                    <li class="footerFirstCol">
+                        <h3><img src="Assets/Images/SmallIcons/FooterLocationIcon.png" alt="Location" loading="lazy">
+                        </h3>
+                        <a href="https://www.google.com/maps?q=31.458753041842215, 74.27577565831574">
+                            <h3><strong>Address:</strong>&nbsp;&nbsp; Lahore Pakistan</h3>
+                        </a>
+                    </li>
+                    <li class="footerFirstCol">
+                        <h3><img src="Assets/Images/SmallIcons/FooterMobileIcon.png" alt="Phone" loading="lazy"></h3>
+                        <a href="tel:{{ $phone }}">
+                            <h3><strong>Call Us:</strong>&nbsp; 0282828829282</h3>
+                        </a>
+                    </li>
+                    <li class="footerFirstCol">
+                        <h3><img src="Assets/Images/SmallIcons/FooterEmailIcon.png" alt="Mail" loading="lazy"></h3>
+                        <a href="mailto:{{ $email }}">
+                            <h3><strong>Email:</strong>&nbsp;GrocerSupport@gmail.com</h3>
+                        </a>
+                    </li>
+                    <li class="footerFirstCol">
+                        <h3><img src="Assets/Images/SmallIcons/FooterClockIcon.png" alt="Clock" loading="lazy"></h3>
+                        <h3><strong>Work hours:</strong>&nbsp; 8:00 - 20:00, Sunday - Thursday</h3>
+                    </li>
+                </ul>
+            </div>
+            <div class="col-6 col-sm-6 col-md-6 col-lg-2">
+                <ul class="p-0">
+                    <li class="mb-4">
+                        <h1 class="footerheadings">Account</h1>
+                    </li>
+                    <li class="mb-3">
+                        <a class="footerSubHeadings" href="/wishlist" wire:navigate>Wishlist</a>
+                    </li>
+                    <li class="mb-3">
+                        <a class="footerSubHeadings" href="/cart" wire:navigate>Cart</a>
+                    </li>
+                    <li class="mb-3">
+                        <a class="footerSubHeadings" href="/track" wire:navigate>Track Order</a>
+                    </li>
+                    <li class="mb-3">
+                        <a class="footerSubHeadings" href="/billing" wire:navigate>Shipping Details</a>
+                    </li>
+                </ul>
+            </div>
+            <div class="col-6 col-sm-6 col-md-6 col-lg-2">
+                <ul class="p-0">
+                    <li class="mb-4">
+                        <h1 class="footerheadings">Useful links</h1>
+                    </li>
+                    <li class="mb-3 footerSubHeadings"><a class="footerSubHeadings" href="/about-us" wire:navigate>About
+                            Us</a></li>
+                    <li class="mb-3 footerSubHeadings"><a class="footerSubHeadings" href="/hot-deals" wire:navigate>Hot
+                            deals</a></li>
+                    <li class="mb-3 footerSubHeadings"><a class="footerSubHeadings" href="/promotions"
+                            wire:navigate>Promotions</a></li>
+                </ul>
+            </div>
+            <div class="col-6 col-sm-6 col-md-12 col-lg-2">
+                <ul class="p-0">
+                    <li class="mb-4">
+                        <h1 class="footerheadings">Help Center</h1>
+                    </li>
+                    <li class="mb-3 footerSubHeadings"><a class="footerSubHeadings" href="/refund"
+                            wire:navigate>Refund</a>
+                    </li>
+                    <li class="mb-3 footerSubHeadings"><a class="footerSubHeadings" href="/contact-us"
+                            wire:navigate>Contact
+                            Us</a></li>
+                    <li class="mb-3 footerSubHeadings"><a class="footerSubHeadings" href="/faq" wire:navigate>Q&A</a>
+                    </li>
+                </ul>
+            </div>
+            <div class="MobileViewFooterIconsMain col-6 col-sm-6 col-md-12 col-lg-2">
+                <div class="MobileViewfootericons">
+                    <img src="Assets/Images/Icons/Payment1.webp" alt="paymentMethods" loading="lazy">
+                    <img src="Assets/Images/Icons/Payment2.webp" alt="paymentMethods" loading="lazy">
+                    <img src="Assets/Images/Icons/Payment3.webp" alt="paymentMethods" loading="lazy">
+                    <img src="Assets/Images/Icons/Payment4.webp" alt="paymentMethods" loading="lazy">
+                    <img src="Assets/Images/Icons/Payment5.webp" alt="paymentMethods" loading="lazy">
+                </div>
+                <div class="MobileViewFooterSocialIcons">
+                    <a href=""><img src="Assets/Images/SmallIcons/Footerfacebook.png" alt=""></a>
+                    <a href=""><img src="Assets/Images/SmallIcons/FooterTwitter.png" alt=""></a>
+                    <a href=""><img src="Assets/Images/SmallIcons/FooterPinterest.png" alt=""></a>
+                    <a href=""><img src="Assets/Images/SmallIcons/FooterInsta.png" alt=""></a>
+                </div>
+            </div>
+        </div>
+        <hr class="footer_line mt-5">
+        <div class="rightReversedAndPaymentIconsMain mt-5 mb-0 mb-md-5">
+            <div class="col-sm-12 col-md-12 col-lg-6">
+                <h6 class="footerAllRightReversed">All right reversed</h6>
+            </div>
+            <div class="col-sm-12 col-md-12 col-lg-6 footericons">
+                <img src="Assets/Images/Icons/Payment1.webp" alt="paymentMethods" loading="lazy">
+                <img src="Assets/Images/Icons/Payment2.webp" alt="paymentMethods" loading="lazy">
+                <img src="Assets/Images/Icons/Payment3.webp" alt="paymentMethods" loading="lazy">
+                <img src="Assets/Images/Icons/Payment4.webp" alt="paymentMethods" loading="lazy">
+                <img src="Assets/Images/Icons/Payment5.webp" alt="paymentMethods" loading="lazy">
+            </div>
+        </div>
+    </div>
+
+    <!--********* FOOTER *********-->
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js"></script>
+    <!-- jQuery -->
+    <script src="https://code.jquery.com/jquery-3.6.4.min.js"></script>
+    <livewire:scripts />
+</body>
+
+</html>
