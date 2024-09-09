@@ -78,7 +78,7 @@
     background-color: var(--hovergreen);
 }
 
-.ullists {
+.ullists_subhomenav {
     margin-left: 0px;
     display: flex;
     justify-content: space-between;
