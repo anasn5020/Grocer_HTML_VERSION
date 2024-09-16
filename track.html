@@ -1,0 +1,335 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <!-- {{-- Quicksand --}} -->
+        <link rel="preconnect" href="https://fonts.googleapis.com" />
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+        <link href="https://fonts.googleapis.com/css2?family=Quicksand:wght@300..700&display=swap" rel="stylesheet" />
+        <!-- {{-- Poppins --}} -->
+        <link rel="preconnect" href="https://fonts.googleapis.com" />
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+        <link
+            href="https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap"
+            rel="stylesheet" />
+        <!-- {{-- Mulish --}} -->
+        <link rel="preconnect" href="https://fonts.googleapis.com" />
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+        <link
+            href="https://fonts.googleapis.com/css2?family=Mulish:ital,wght@0,200..1000;1,200..1000&family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap"
+            rel="stylesheet" />
+        <!-- {{-- Roboto --}} -->
+        <link rel="preconnect" href="https://fonts.googleapis.com" />
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+        <link
+            href="https://fonts.googleapis.com/css2?family=Roboto:ital,wght@0,100;0,300;0,400;0,500;0,700;0,900;1,100;1,300;1,400;1,500;1,700;1,900&display=swap"
+            rel="stylesheet" />
+        <!-- {{-- Inter --}} -->
+        <link rel="preconnect" href="https://fonts.googleapis.com" />
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+        <link
+            href="https://fonts.googleapis.com/css2?family=Inter:ital,opsz,wght@0,14..32,100..900;1,14..32,100..900&display=swap"
+            rel="stylesheet" />
+        <!-- {{-- Bootstrap 5 --}} -->
+        <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" />
+        <!-- {{-- Bootstrap 5 Icons --}} -->
+        <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.min.css" />
+        <!-- {{-- Font Awesome Icons CDN --}} -->
+        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css" />
+        <link rel="stylesheet" href="https://unpkg.com/aos@next/dist/aos.css" />
+    <!-- {{-- Track Order Page Css Custom Style --}} -->
+    <link rel="stylesheet" href="/Assets/CSS/TrackOrder.css">
+    <!-- {{-- NavBar Custom Stylesheet --}} -->
+    <link rel="stylesheet" href="/Assets/CSS/Navbar.css">
+    <!-- {{-- Setting Sidebar Custom Stylesheet --}} -->
+    <link rel="stylesheet" href="/Assets/CSS/Components/Setting-Sidebar.css">
+    <title>Track</title>
+</head>
+<body>
+    <div>
+    <!--********** NAVIGATION **********-->
+    <div>
+        <nav class="navbar navbar-expand-lg bg-white shadow-sm main_navbar">
+            <div class="container d-flex">
+                <div class="logo_main_image">
+                    <!-- {{-- MVSideBarOpenIcon --}} -->
+                    <a href="#" class="SideBarOpenIcon">
+                        <img src="Assets/Images/SmallIcons/SideBarOpenIcon.webp" alt="collapseIcon" loading="lazy" />
+                    </a>
+                    <!-- {{-- MVSideBarOpenIcon --}} -->
+                    <img src="/Assets/Images/Icons/GrocerLogo.webp" onerror="this.src='/Assets/IMAGES/ErrorImage.webp'"
+                        wire:navigate href="/" alt="Grocer__Logo" class="mainlogo" loading="lazy" />
+                </div>
+                <!-- {{-- ****************Mobile View Profile and Cart******************** --}} -->
+                <div class="mobile_cart_profile">
+                    <div class="mobile_image_profile">
+                        <a href="/settings">
+                            <img src="Assets/Images/Banner/user4.webp" class="user_profile_image user_profile_image_nav"
+                                alt="userImage" loading="lazy" />
+                        </a>
+                    </div>
+                    <div>
+                        <h1 class="mobile_cart_heading position-relative m-0">
+                            <a wire:navigate href="/cart">
+                                <img src="Assets/Images/SmallIcons/ShopCart.webp" alt="cartImage" loading="lazy" />
+                            </a>
+                            <span class="position-absolute translate-middle cart_badge border border-light">
+                                1
+                                <span class="visually-hidden">New alerts</span>
+                            </span>
+                        </h1>
+                    </div>
+                </div>
+                <!-- {{-- ****************Mobile View Profile and Cart******************** --}} -->
+                <ul class="navbar-nav me-auto my-2 my-lg-0 navbar-nav-scroll ul_nav" style="--bs-scroll-height: 100px">
+                    <li class="nav-item search_button">
+                        <form class="d-flex" onsubmit="event.preventDefault();">
+                            <div class="input-group searchButtonCate">
+                                <select name="" id="" wire:model.live="search_category"
+                                    class="SerachwithCategoriesLists">
+                                    <option value="All Categories">All Categories</option>
+                                    <option value="{{ $item['id'] }}">Fruits</option>
+                                </select>
+                                <img src="Assets/Images/Icons/dividerSearch.svg" class="searchDividerIcon" alt="" />
+                                <input type="text" wire:model.live.debounce.300ms="search_query"
+                                    class="shadow-md border-0 search_inp" maxlength="20"
+                                    placeholder="Search for items..." aria-label="Search" autocomplete="off" />
+                                <button class="btn rounded-0 shadow-md search_btn" type="submit">
+                                    <img src="Assets/Images/SmallIcons/search.webp" alt="searchIcon" loading="lazy" />
+                                </button>
+                            </div>
+                        </form>
+                    </li>
+                    <li class="nav-item d-flex whishlist_button">
+                        <h1 class="wishlist_heading position-relative">
+                            <img src="Assets/Images/SmallIcons/WishlistHeart.webp" alt="wishlistIcon" loading="lazy" />
+                            <span class="position-absolute translate-middle wishlist_badge border border-light">
+                                1
+                                <span class="visually-hidden">New alerts</span>
+                            </span>
+                        </h1>
+                        <a class="nav-link wislistHeading" href="/wishlist" wire:navigate>Wishlist</a>
+                    </li>
+                    <li class="nav-item dropdown d-flex cart_button">
+                        <h1 class="cart_heading position-relative">
+                            <img src="Assets/Images/SmallIcons/ShopCart.webp" alt="cartButton" loading="lazy" />
+                            <span class="position-absolute translate-middle wishlist_badge border border-light">
+                                1
+                                <span class="visually-hidden">New alerts</span>
+                            </span>
+                        </h1>
+                        <a href="#" class="mycartCustom" data-bs-toggle="dropdown" aria-expanded="false">
+                            <div>
+                                <h3 class="mycartCustomHeading1">My Cart</h3>
+                                <h3 class="mycartCustomHeading2">
+                                    0$
+                                </h3>
+                            </div>
+                            <div>
+                                <img src="Assets/Images/SmallIcons/ArrowDown.svg" alt="ArrowDown" loading="lazy" />
+                            </div>
+                        </a>
+                        <ul class="dropdown-menu cart_dropdownCustom dropdown-menu-end">
+                            <div class="w-75 mx-auto">
+                                <div class="d-flex justify-content-between align-items-center mb-4">
+                                    <div class="d-flex justify-content-start">
+                                        <img src="Assets/Images/SmallIcons/ShopCart.webp" alt="cartButton"
+                                            loading="lazy" />
+                                        <span class="wishlist_badge border border-light">
+                                            1
+                                            <span class="visually-hidden">New alerts</span>
+                                        </span>
+                                    </div>
+                                    <div class="d-flex justify-content-end align-content-center gap-2">
+                                        <h1 class="customCartDropdownHeading">Total:</h1>
+                                        <h1 class="customCartDropdownHeading">
+                                            0$
+                                        </h1>
+                                    </div>
+                                </div>
+                                <h1 class="text-center">Cart is Empty</h1>
+                                <div class="mt-3 mb-3 d-flex justify-content-between align-items-center gap-3">
+                                    <a wire:navigate href="/cart" class="customDropdownCartButton1">My Cart</a>
+                                    <a wire:navigate href="/billing" class="customDropdownCartButton2">Checkout</a>
+                                </div>
+                            </div>
+                        </ul>
+                    </li>
+                    <li class="nav-item dropdown d-flex profile_image">
+                        <img src="Assets/Images/Banner/user4.webp" class="user_profile_image user_profile_image_nav"
+                            alt="UserImage" loading="lazy" />
+                        <a class="nav-link loginheadingNav" href="#" role="button" data-bs-toggle="dropdown"
+                            aria-expanded="false">
+                            Login
+                            <img src="Assets/Images/SmallIcons/ArrowDown.svg" alt="" />
+                        </a>
+                        <ul class="dropdown-menu registerProfileDropdown">
+                            <li>
+                                <a class="dropdown-item" href="/history">Order History</a>
+                            </li>
+                            <li><a class="dropdown-item" href="/settings">Settings</a></li>
+                            <li><a class="dropdown-item" href="/orders">Orders</a></li>
+                            <hr />
+                            <li><a class="dropdown-item" href="/login">Login</a></li>
+                            <li><a class="dropdown-item" href="/register">Register</a></li>
+                        </ul>
+            </div>
+        </nav>
+        <!-- {{-- ******************Mobile View****************** --}} -->
+        <div class="search_component">
+            <form class="d-flex" onsubmit="event.preventDefault();">
+                <div class="input-group searchButtonCate">
+                    <select name="" id="" wire:model.live="search_category" class="SerachwithCategoriesLists">
+                        <option value="All Categories">All Categories</option>
+                        <option value="{{ $item['id'] }}">Fruits</option>
+                    </select>
+                    <img src="Assets/Images/Icons/dividerSearch.svg" class="searchDividerIcon" alt="" />
+                    <input type="text" wire:model.live.debounce.300ms="search_query"
+                        class="form-control shadow-md border-0 search_inp" maxlength="20"
+                        placeholder="Search for items..." aria-label="Search" autocomplete="off" />
+                    <button class="btn rounded-0 shadow-md search_btn">
+                        <img src="Assets/Images/SmallIcons/search.webp" alt="searchIcon" loading="lazy" />
+                    </button>
+                </div>
+            </form>
+        </div>
+        <!-- {{-- ******************Mobile View****************** --}} -->
+    </div>
+    <!--********** NAVIGATION **********-->
+        <div class="container-fluid p-3">
+            <div class="crum">
+                <a href="/" class="TracKOrderBreadCrumItem" wire:navigate>Home</a>
+                <img src="/Assets/Images/SmallIcons/BreadcrumsCenter.webp" alt="">
+                <a href="/orders" class="TracKOrderBreadCrumItem" wire:navigate>Orders</a>
+                <img src="/Assets/Images/SmallIcons/BreadcrumsCenter.webp" alt="">
+                <a href="/track" class="TracKOrderBreadCrumItem" wire:navigate>ID 1000038</a>
+            </div>
+            <div class="OrderNumberAndBtns">
+                <div class="">
+                    <h1 class="order_id_heading">Order ID: 1000038</h1>
+                </div>
+            </div>
+            <!-- {{-- ******************** --}} -->
+            <div class="TrackTimeTrackOrder">
+                <div class="track_time_container">
+                    <h1 class="order_time_date">Order date: <strong>28 August 2024</strong></h1>
+                    <h6 class="m-0 slashinOrderTime"> | </h6>
+                        <h1 class="estimated_deleivery"><i class="bi bi-truck"></i> Deliver Time Slot:
+                           06:00 <i>to</i> 10:00</h1>
+                </div>
+            </div>
+            <hr class="mt-3" style="color: #D0D5DD;">
+            <!-- {{-- ******************** --}} -->
+            <div class="row">
+                <div class="col">
+                    <h3 class="OrderStatusHeading">CONFIRMED</h3>
+                </div>
+            </div>
+            <!-- {{-- *************Product # 1**************** --}} -->
+                <div class="track_product_item">
+                    <div class="track_product_img_box">
+                        <img src="/Assets/Images/Products/TOMATOOS.png"
+                            onerror="this.src='/Assets/Images/ERROR/ErrorImage.webp'" class="w-100"
+                            alt="{{ $item['name'] }}">
+                    </div>
+                    <div class="ProductNameQTYOthersTrack">
+                        <h1 class="Item_name">Tomato</h1>
+                        <div class="tags_Div">
+                            <h1 class="Item_tags">QTY: 2</h1>
+                        </div>
+                    </div>
+                    <div class="ProductPriceTrack">
+                        <h1 class="track_product_price">200$</h1>
+                    </div>
+                </div>
+                <div class="track_product_item">
+                    <div class="track_product_img_box">
+                        <img src="/Assets/Images/Products/TOMATOOS.png"
+                            onerror="this.src='/Assets/Images/ERROR/ErrorImage.webp'" class="w-100"
+                            alt="{{ $item['name'] }}">
+                    </div>
+                    <div class="ProductNameQTYOthersTrack">
+                        <h1 class="Item_name">Tomato</h1>
+                        <div class="tags_Div">
+                            <h1 class="Item_tags">QTY: 2</h1>
+                        </div>
+                    </div>
+                    <div class="ProductPriceTrack">
+                        <h1 class="track_product_price">200$</h1>
+                    </div>
+                </div>
+                <div class="track_product_item">
+                    <div class="track_product_img_box">
+                        <img src="/Assets/Images/Products/TOMATOOS.png"
+                            onerror="this.src='/Assets/Images/ERROR/ErrorImage.webp'" class="w-100"
+                            alt="{{ $item['name'] }}">
+                        {{-- <img src="{{ asset('Assets/Images/Icons/cabbage.webp') }}" class="w-100" alt=""> --}}
+                    </div>
+                    <div class="ProductNameQTYOthersTrack">
+                        <h1 class="Item_name">Tomato</h1>
+                        <div class="tags_Div">
+                            <h1 class="Item_tags">QTY: 2</h1>
+                        </div>
+                    </div>
+                    <div class="ProductPriceTrack">
+                        <h1 class="track_product_price">200$</h1>
+                    </div>
+                </div>
+            <hr class="mt-4">
+            <div class="row">
+                <div class="col-sm-12 col-md-12 col-lg-6">
+                    <h1 class="tracking_payment_heading">Payment</h1>
+                    <div class="d-flex">
+                        <h3 class="visa_2"><strong>COD</strong></h3>
+                    </div>
+                </div>
+                <div class="col-sm-12 col-md-12 col-lg-6">
+                    <h1 class="tracking_payment_heading">Delivery</h1>
+                    <h3 class="visa_1">Address</h3>
+                    <h2 class="Tracking_address">Type: Home <br>
+                       Johar Town Lahore <br>
+                       Punjab Pakistan
+                    </h2>
+                </div>
+            </div>
+            <hr class="mt-4">
+            <div class="row">
+                <div class="col-sm-12 col-md-12 col-lg-6">
+                    <h1 class="tracking_payment_heading">Need Help</h1>
+                    <div class="mt-3">
+                        <h3 class="visa_1"><i class="bi bi-exclamation-circle"></i> &nbsp;Order Issues &nbsp;<i
+                                class="bi bi-arrow-up-right"></i> </h3>
+                        <h3 class="visa_1"><i class="bi bi-truck"></i> &nbsp;Order Issues &nbsp;<i
+                                class="bi bi-arrow-up-right"></i> </h3>
+                        <h3 class="visa_1"><i class="bi bi-box-seam"></i> &nbsp;Order Issues &nbsp;<i
+                                class="bi bi-arrow-up-right"></i> </h3>
+                    </div>
+                </div>
+                <div class="col-sm-12 col-md-12 col-lg-6">
+                    <h1 class="tracking_payment_heading">Order Summary</h1>
+                    <div class="row">
+                        <div class="col">
+                            <h2 class="Tracking_address">Amount</h2>
+                            <h2 class="Tracking_address">Delivery</h2>
+                            <hr>
+                            <h2 class="Tracking_address">Total</h2>
+                        </div>
+                        <div class="col text-end">
+                            <h2 class="Tracking_address">
+                                200$ </h2>
+                            <h2 class="Tracking_address">100$
+                            </h2>
+                            <hr>
+                            <h2 class="Tracking_address">
+                                <strong>300$</strong>
+                            </h2>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    
+    </div>
+</body>
+</html>

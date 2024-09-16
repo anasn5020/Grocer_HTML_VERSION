@@ -22,7 +22,7 @@
     <meta property="og:type" content="website" />
     <link rel="shortcut icon" href="https://grocer.softwaresystems.us/storage/app/public/restaurant/{{ $favicon }}"
         type="image/x-icon" />
-    <title>Cart</title>
+    <title>Product review</title>
     <!-- {{-- Quicksand --}} -->
     <link rel="preconnect" href="https://fonts.googleapis.com" />
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
@@ -64,8 +64,7 @@
     <link rel="stylesheet" href="/Assets/CSS/Footer.css">
     <!-- {{-- Bread Crumbs Style  --}} -->
     <link rel="stylesheet" href="/Assets/CSS/Components/breadCrumbs.css">
-    <!-- {{-- Cart Page Css Custom Style --}} -->
-    <link rel="stylesheet" href="/Assets/CSS/cart.css">
+    <link rel="stylesheet" href="/Assets/CSS/ProductReview.css">
 </head>
 
 <body>
@@ -223,148 +222,195 @@
         <div class="container">
             <ul class="breadcrumb">
                 <li><a href="/" wire:navigate>Home</a></li>
-                <li><a href="" wire:navigate>Apple</a></li>
+                <li><a href="" wire:navigate>Product Review</a></li>
             </ul>
         </div>
     </div>
     <!--********* BREADCRUMBS *********-->
-    <div class="container cart_main_container">
-        <h1 class="cart_main_heading">My Shopping Cart</h1>
-        <div class="row cartMainWrapper">
-            <div class="col-sm-12 col-md-12 col-lg-9">
-                <div class="cart_table">
-                    <table class="table">
-                        <thead>
-                            <tr>
-                                <td class="main_table_heading_cart">PRODUCT</td>
-                                <td class="main_table_heading_cart">PRICE</td>
-                                <td class="main_table_heading_cart">QUANTITY</td>
-                                <td class="main_table_heading_cart">SUBTOTAL</td>
-                            </tr>
-                        </thead>
-                        <!-- {{-- *******************BODY******************** --}} -->
-                        <tbody class="">
-                                <tr>
-                                    <td>
-                                        <div class="product_img_name_cart">
-                                            <div class="ProductImage_cart">
-                                                <img src="./Assets/Images/Products/TOMATOOS.png"
-                                                    class="product_image_cart" alt="Tomato" loading="lazy">
-                                            </div>
-                                            <div class="">
-                                                <h1 class="product_name_cart">Tomato</h1>
-                                            </div>
-                                        </div>
-                                    </td>
-                                    <td>
-                                        <div class="row">
-                                            <div class="col">
-                                                <h1 class="price_bar_cart">
-                                                    10$
-                                                </h1>
-                                            </div>
-                                            <div class="col"></div>
-                                        </div>
-                                    </td>
-
-
-                                    <td>
-                                        <div class="counter_cart">
-                                            <button class="incrementbtn_cart"
-                                                wire:click="decrement('{{ $index }}')"><i
-                                                    class="bi bi-dash"></i></button>
-                                            <h2 id="counting">2</h2>
-                                            <button class="decrementbtn_cart"
-                                                wire:click="increment('{{ $index }}')"><i
-                                                    class="bi bi-plus"></i></button>
-                                        </div>
-                                    </td>
-                                    <td>
-                                        <div class="priceXCrossBtnDivCart">
-                                            <h1 class="price_bar_cart">
-                                                20$
-                                            </h1>
-                                            <div class="cart_cross_div">
-                                                <span class="cross_button_cart"
-                                                    wire:click="removeFromCart({{ $index }})">
-                                                    <i class="bi bi-x"></i>
-                                                </span>
-                                            </div>
-                                        </div>
-                                    </td>
-                                </tr>
-                            <tr>
-                                <td colspan="4">
-                                    <div class="returnBtnUpdtCartMainCart">
-                                        <div class="">
-                                            <a href="/" wire:navigate class="rtrn_shop_btn">Return to Shop</a>
-                                        </div>
-                                        <div class="">
-                                            <button class="upd_cart_btn" wire:click="updateCart">
-                                                Update Cart
-                                            </button>
-                                        </div>
-                                    </div>
-                                </td>
-                            </tr>
-                        </tbody>
-                    </table>
-                </div>
-                <div class="coupon_div mb-sm-4 mb-md-4 mb-lg-0">
-                    <form action="" wire:submit.prevent="handleCouponCode">
-                        <span class="coupon_heading">Coupon Code</span>
-                        <input type="text" placeholder="Enter Code" class="coupon_inp" wire:model="coupon_code"
-                            maxlength="25">
-                        <button class="coupon_btn" type="submit">Apply Coupon
-                        </button>
-                    </form>
-                </div>
-            </div>
-            <div class="col-sm-12 col-md-12 col-lg-3">
-                <div class="total_bill">
-                    <h3 class="total_cart_main_heading">Cart Total</h3>
-                    <div class="row total_cart_main_rows mt-3">
-                        <div class="col">
-                            <h4 class="Sub_heading_Total_cart">Subtotal:</h4>
-                        </div>
-                        <div class="col description_total_cart">
-                            <div wire:poll.visible>
-                                <strong>20$</strong>
-                            </div>
-                        </div>
-                        <hr class="mt-2">
-                    </div>
-
-                    <div class="row total_cart_main_rows">
-                        <div class="col">
-                            <h4 class="Sub_heading_Total_cart">Shipping:</h4>
-                        </div>
-                        <div class="col description_total_cart">
-                            <strong>
-                                100$
-                            </strong>
-                        </div>
-                        <hr class="mt-2">
-                    </div>
-
-                    <div class="row total_cart_main_rows">
-                        <div class="col">
-                            <h4 class="Sub_heading_Total_cart">Total:</h4>
-                        </div>
-                        <div class="col description_total_cart">
-                            <strong>
-                                120$                            </strong>
-                        </div>
-                    </div>
-                    <div>
-                        <a wire:click.prevent="proceedToCheckout" class="proceed_checkOut_btn d-block">Proceed to
-                            checkout</a>
-                    </div>
-                </div>
-            </div>
+    <div class="container wishlist_main_container">
+        <h1 class="ProductReviewMainHeading">Order # 100038</h1>
+        <div class="mainProductDetailsSummary">
+            <h3 class="OrderDetailsSummary"><i class="bi bi-cash-stack"></i> 300$
+                 | </h3>
+            <h3 class="OrderDetailsSummary"><i class="bi bi-calendar"></i>2024-09-10 |</h3>
+            <h3 class="OrderDetailsSummary"><i
+                    class="bi bi-geo-alt"></i>Sargodha</h3>
         </div>
-        <!-- {{-- ******************************** --}} -->
+        <h3 class="ProductReviewLabel">Overall Rating (Click to rate)</h3>
+        <div class="ratingsMainContain">
+            <label class="starLabel">
+                <input type="radio" name="rating" value="1" wire:model="rating">
+                <svg viewBox="0 0 24 24" width="24px" height="24px">
+                    <g>
+                        <g>
+                            <path
+                                d="M9.362,9.158c0,0-3.16,0.35-5.268,0.584c-0.19,0.023-0.358,0.15-0.421,0.343s0,0.394,0.14,0.521 c1.566,1.429,3.919,3.569,3.919,3.569c-0.002,0-0.646,3.113-1.074,5.19c-0.036,0.188,0.032,0.387,0.196,0.506 c0.163,0.119,0.373,0.121,0.538,0.028c1.844-1.048,4.606-2.624,4.606-2.624s2.763,1.576,4.604,2.625 c0.168,0.092,0.378,0.09,0.541-0.029c0.164-0.119,0.232-0.318,0.195-0.505c-0.428-2.078-1.071-5.191-1.071-5.191 s2.353-2.14,3.919-3.566c0.14-0.131,0.202-0.332,0.14-0.524s-0.23-0.319-0.42-0.341c-2.108-0.236-5.269-0.586-5.269-0.586 s-1.31-2.898-2.183-4.83c-0.082-0.173-0.254-0.294-0.456-0.294s-0.375,0.122-0.453,0.294C10.671,6.26,9.362,9.158,9.362,9.158z">
+                            </path>
+                        </g>
+                    </g>
+                </svg>
+            </label>
+            <label class="starLabel">
+                <input type="radio" name="rating" value="2" wire:model="rating">
+                <svg viewBox="0 0 24 24" width="24px" height="24px">
+                    <g>
+                        <g>
+                            <path
+                                d="M9.362,9.158c0,0-3.16,0.35-5.268,0.584c-0.19,0.023-0.358,0.15-0.421,0.343s0,0.394,0.14,0.521 c1.566,1.429,3.919,3.569,3.919,3.569c-0.002,0-0.646,3.113-1.074,5.19c-0.036,0.188,0.032,0.387,0.196,0.506 c0.163,0.119,0.373,0.121,0.538,0.028c1.844-1.048,4.606-2.624,4.606-2.624s2.763,1.576,4.604,2.625 c0.168,0.092,0.378,0.09,0.541-0.029c0.164-0.119,0.232-0.318,0.195-0.505c-0.428-2.078-1.071-5.191-1.071-5.191 s2.353-2.14,3.919-3.566c0.14-0.131,0.202-0.332,0.14-0.524s-0.23-0.319-0.42-0.341c-2.108-0.236-5.269-0.586-5.269-0.586 s-1.31-2.898-2.183-4.83c-0.082-0.173-0.254-0.294-0.456-0.294s-0.375,0.122-0.453,0.294C10.671,6.26,9.362,9.158,9.362,9.158z">
+                            </path>
+                        </g>
+                    </g>
+                </svg>
+            </label>
+            <label class="starLabel">
+                <input type="radio" name="rating" value="3" wire:model="rating">
+                <svg viewBox="0 0 24 24" width="24px" height="24px">
+                    <g>
+                        <g>
+                            <path
+                                d="M9.362,9.158c0,0-3.16,0.35-5.268,0.584c-0.19,0.023-0.358,0.15-0.421,0.343s0,0.394,0.14,0.521 c1.566,1.429,3.919,3.569,3.919,3.569c-0.002,0-0.646,3.113-1.074,5.19c-0.036,0.188,0.032,0.387,0.196,0.506 c0.163,0.119,0.373,0.121,0.538,0.028c1.844-1.048,4.606-2.624,4.606-2.624s2.763,1.576,4.604,2.625 c0.168,0.092,0.378,0.09,0.541-0.029c0.164-0.119,0.232-0.318,0.195-0.505c-0.428-2.078-1.071-5.191-1.071-5.191 s2.353-2.14,3.919-3.566c0.14-0.131,0.202-0.332,0.14-0.524s-0.23-0.319-0.42-0.341c-2.108-0.236-5.269-0.586-5.269-0.586 s-1.31-2.898-2.183-4.83c-0.082-0.173-0.254-0.294-0.456-0.294s-0.375,0.122-0.453,0.294C10.671,6.26,9.362,9.158,9.362,9.158z">
+                            </path>
+                        </g>
+                    </g>
+                </svg>
+            </label>
+            <label class="starLabel">
+                <input type="radio" name="rating" value="4" wire:model="rating">
+                <svg viewBox="0 0 24 24" width="24px" height="24px">
+                    <g>
+                        <g>
+                            <path
+                                d="M9.362,9.158c0,0-3.16,0.35-5.268,0.584c-0.19,0.023-0.358,0.15-0.421,0.343s0,0.394,0.14,0.521 c1.566,1.429,3.919,3.569,3.919,3.569c-0.002,0-0.646,3.113-1.074,5.19c-0.036,0.188,0.032,0.387,0.196,0.506 c0.163,0.119,0.373,0.121,0.538,0.028c1.844-1.048,4.606-2.624,4.606-2.624s2.763,1.576,4.604,2.625 c0.168,0.092,0.378,0.09,0.541-0.029c0.164-0.119,0.232-0.318,0.195-0.505c-0.428-2.078-1.071-5.191-1.071-5.191 s2.353-2.14,3.919-3.566c0.14-0.131,0.202-0.332,0.14-0.524s-0.23-0.319-0.42-0.341c-2.108-0.236-5.269-0.586-5.269-0.586 s-1.31-2.898-2.183-4.83c-0.082-0.173-0.254-0.294-0.456-0.294s-0.375,0.122-0.453,0.294C10.671,6.26,9.362,9.158,9.362,9.158z">
+                            </path>
+                        </g>
+                    </g>
+                </svg>
+            </label>
+            <label class="starLabel">
+                <input type="radio" name="rating" value="5" wire:model="rating">
+                <svg viewBox="0 0 24 24" width="24px" height="24px">
+                    <g>
+                        <g>
+                            <path
+                                d="M9.362,9.158c0,0-3.16,0.35-5.268,0.584c-0.19,0.023-0.358,0.15-0.421,0.343s0,0.394,0.14,0.521 c1.566,1.429,3.919,3.569,3.919,3.569c-0.002,0-0.646,3.113-1.074,5.19c-0.036,0.188,0.032,0.387,0.196,0.506 c0.163,0.119,0.373,0.121,0.538,0.028c1.844-1.048,4.606-2.624,4.606-2.624s2.763,1.576,4.604,2.625 c0.168,0.092,0.378,0.09,0.541-0.029c0.164-0.119,0.232-0.318,0.195-0.505c-0.428-2.078-1.071-5.191-1.071-5.191 s2.353-2.14,3.919-3.566c0.14-0.131,0.202-0.332,0.14-0.524s-0.23-0.319-0.42-0.341c-2.108-0.236-5.269-0.586-5.269-0.586 s-1.31-2.898-2.183-4.83c-0.082-0.173-0.254-0.294-0.456-0.294s-0.375,0.122-0.453,0.294C10.671,6.26,9.362,9.158,9.362,9.158z">
+                            </path>
+                        </g>
+                    </g>
+                </svg>
+            </label>
+        </div>
+        <h1 class="mt-3 mainProductsReviewTableHeading">Product Review</h1>
+        <form wire:submit.prevent="SubmitReviews">
+          <div class="productReviewRowheading">
+              <div class="ProductReviewProductImageDivHeading">
+                  <h3 class="mainHeadingRow"><strong>Product</strong></h3>
+              </div>
+              <div class="ProductReviewProductPriceDivHeading">
+                  <h3 class="mainHeadingRow"><strong>Price</strong></h3>
+              </div>
+              <div class="ProductReviewProductQuantityDivHeading">
+                  <h3 class="mainHeadingRow"><strong>Quantity</strong></h3>
+              </div>
+              <div class="ProductReviewProductRatingDivHeading">
+                  <h3 class="mainHeadingRow"><strong>Rating</strong></h3>
+              </div>
+          </div>
+              <div class="productReviewRow">
+                  <div class="ProductReviewProductImageDiv">
+                      <img src="/Assets/Images/Products/TOMATOOS.png"
+                          onerror="this.src='/Assets/Images/ERROR/ErrorImage.webp'" class=""
+                          alt="{{ $product['name'] }}">
+                      <h3 class="productnameheading">Tomato</h3>
+                  </div>
+                  <div class="ProductReviewProductPriceDiv">
+                      <h3 class="table_h3">100$</h3>
+                  </div>
+                  <div class="ProductReviewProductQtyDiv">
+                      <h3 class="table_qty">2</h3>
+                  </div>
+                  <div class="ProductReviewProductRatingDiv">
+                      <div class="ratingsMainContain">
+                        <label class="starLabel">
+                            <input type="radio" name="rating" value="1" wire:model="rating">
+                            <svg viewBox="0 0 24 24" width="24px" height="24px">
+                                <g>
+                                    <g>
+                                        <path
+                                            d="M9.362,9.158c0,0-3.16,0.35-5.268,0.584c-0.19,0.023-0.358,0.15-0.421,0.343s0,0.394,0.14,0.521 c1.566,1.429,3.919,3.569,3.919,3.569c-0.002,0-0.646,3.113-1.074,5.19c-0.036,0.188,0.032,0.387,0.196,0.506 c0.163,0.119,0.373,0.121,0.538,0.028c1.844-1.048,4.606-2.624,4.606-2.624s2.763,1.576,4.604,2.625 c0.168,0.092,0.378,0.09,0.541-0.029c0.164-0.119,0.232-0.318,0.195-0.505c-0.428-2.078-1.071-5.191-1.071-5.191 s2.353-2.14,3.919-3.566c0.14-0.131,0.202-0.332,0.14-0.524s-0.23-0.319-0.42-0.341c-2.108-0.236-5.269-0.586-5.269-0.586 s-1.31-2.898-2.183-4.83c-0.082-0.173-0.254-0.294-0.456-0.294s-0.375,0.122-0.453,0.294C10.671,6.26,9.362,9.158,9.362,9.158z">
+                                        </path>
+                                    </g>
+                                </g>
+                            </svg>
+                        </label>
+                        <label class="starLabel">
+                            <input type="radio" name="rating" value="2" wire:model="rating">
+                            <svg viewBox="0 0 24 24" width="24px" height="24px">
+                                <g>
+                                    <g>
+                                        <path
+                                            d="M9.362,9.158c0,0-3.16,0.35-5.268,0.584c-0.19,0.023-0.358,0.15-0.421,0.343s0,0.394,0.14,0.521 c1.566,1.429,3.919,3.569,3.919,3.569c-0.002,0-0.646,3.113-1.074,5.19c-0.036,0.188,0.032,0.387,0.196,0.506 c0.163,0.119,0.373,0.121,0.538,0.028c1.844-1.048,4.606-2.624,4.606-2.624s2.763,1.576,4.604,2.625 c0.168,0.092,0.378,0.09,0.541-0.029c0.164-0.119,0.232-0.318,0.195-0.505c-0.428-2.078-1.071-5.191-1.071-5.191 s2.353-2.14,3.919-3.566c0.14-0.131,0.202-0.332,0.14-0.524s-0.23-0.319-0.42-0.341c-2.108-0.236-5.269-0.586-5.269-0.586 s-1.31-2.898-2.183-4.83c-0.082-0.173-0.254-0.294-0.456-0.294s-0.375,0.122-0.453,0.294C10.671,6.26,9.362,9.158,9.362,9.158z">
+                                        </path>
+                                    </g>
+                                </g>
+                            </svg>
+                        </label>
+                        <label class="starLabel">
+                            <input type="radio" name="rating" value="3" wire:model="rating">
+                            <svg viewBox="0 0 24 24" width="24px" height="24px">
+                                <g>
+                                    <g>
+                                        <path
+                                            d="M9.362,9.158c0,0-3.16,0.35-5.268,0.584c-0.19,0.023-0.358,0.15-0.421,0.343s0,0.394,0.14,0.521 c1.566,1.429,3.919,3.569,3.919,3.569c-0.002,0-0.646,3.113-1.074,5.19c-0.036,0.188,0.032,0.387,0.196,0.506 c0.163,0.119,0.373,0.121,0.538,0.028c1.844-1.048,4.606-2.624,4.606-2.624s2.763,1.576,4.604,2.625 c0.168,0.092,0.378,0.09,0.541-0.029c0.164-0.119,0.232-0.318,0.195-0.505c-0.428-2.078-1.071-5.191-1.071-5.191 s2.353-2.14,3.919-3.566c0.14-0.131,0.202-0.332,0.14-0.524s-0.23-0.319-0.42-0.341c-2.108-0.236-5.269-0.586-5.269-0.586 s-1.31-2.898-2.183-4.83c-0.082-0.173-0.254-0.294-0.456-0.294s-0.375,0.122-0.453,0.294C10.671,6.26,9.362,9.158,9.362,9.158z">
+                                        </path>
+                                    </g>
+                                </g>
+                            </svg>
+                        </label>
+                        <label class="starLabel">
+                            <input type="radio" name="rating" value="4" wire:model="rating">
+                            <svg viewBox="0 0 24 24" width="24px" height="24px">
+                                <g>
+                                    <g>
+                                        <path
+                                            d="M9.362,9.158c0,0-3.16,0.35-5.268,0.584c-0.19,0.023-0.358,0.15-0.421,0.343s0,0.394,0.14,0.521 c1.566,1.429,3.919,3.569,3.919,3.569c-0.002,0-0.646,3.113-1.074,5.19c-0.036,0.188,0.032,0.387,0.196,0.506 c0.163,0.119,0.373,0.121,0.538,0.028c1.844-1.048,4.606-2.624,4.606-2.624s2.763,1.576,4.604,2.625 c0.168,0.092,0.378,0.09,0.541-0.029c0.164-0.119,0.232-0.318,0.195-0.505c-0.428-2.078-1.071-5.191-1.071-5.191 s2.353-2.14,3.919-3.566c0.14-0.131,0.202-0.332,0.14-0.524s-0.23-0.319-0.42-0.341c-2.108-0.236-5.269-0.586-5.269-0.586 s-1.31-2.898-2.183-4.83c-0.082-0.173-0.254-0.294-0.456-0.294s-0.375,0.122-0.453,0.294C10.671,6.26,9.362,9.158,9.362,9.158z">
+                                        </path>
+                                    </g>
+                                </g>
+                            </svg>
+                        </label>
+                        <label class="starLabel">
+                            <input type="radio" name="rating" value="5" wire:model="rating">
+                            <svg viewBox="0 0 24 24" width="24px" height="24px">
+                                <g>
+                                    <g>
+                                        <path
+                                            d="M9.362,9.158c0,0-3.16,0.35-5.268,0.584c-0.19,0.023-0.358,0.15-0.421,0.343s0,0.394,0.14,0.521 c1.566,1.429,3.919,3.569,3.919,3.569c-0.002,0-0.646,3.113-1.074,5.19c-0.036,0.188,0.032,0.387,0.196,0.506 c0.163,0.119,0.373,0.121,0.538,0.028c1.844-1.048,4.606-2.624,4.606-2.624s2.763,1.576,4.604,2.625 c0.168,0.092,0.378,0.09,0.541-0.029c0.164-0.119,0.232-0.318,0.195-0.505c-0.428-2.078-1.071-5.191-1.071-5.191 s2.353-2.14,3.919-3.566c0.14-0.131,0.202-0.332,0.14-0.524s-0.23-0.319-0.42-0.341c-2.108-0.236-5.269-0.586-5.269-0.586 s-1.31-2.898-2.183-4.83c-0.082-0.173-0.254-0.294-0.456-0.294s-0.375,0.122-0.453,0.294C10.671,6.26,9.362,9.158,9.362,9.158z">
+                                        </path>
+                                    </g>
+                                </g>
+                            </svg>
+                        </label>
+                      </div>
+                  </div>
+              </div>
 
+          <div class="row">
+              <div class="col">
+                  <label for="" class="ProductReviewLabel">Write Comment</label><br>
+                  <textarea cols="30" rows="6" class="ProductRatingInp" wire:model="comment"></textarea>
+              </div>
+          </div>
+
+          <div class="row">
+              <div class="col">
+                  <button type="submit" class="ProductReviewSubmitButton">
+                      Submit Product Review
+                  </button>
+              </div>
+          </div>
+      </form>
+
+        <!-- {{-- ******************************** --}} -->
         <hr class="mt-5">
     </div>
 
@@ -485,68 +531,22 @@
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js"></script>
     <!-- jQuery -->
     <script>
-        const menuItems = document.querySelectorAll('.menu-item');
-    
-        menuItems.forEach(item => {
-            item.addEventListener('click', () => {
-                // Hide all content
-                document.querySelectorAll('.content > div').forEach(content => {
-                    content.style.display = 'none';
+        document.querySelectorAll('.ratingsMainContain').forEach(container => {
+            container.querySelectorAll('.starLabel input').forEach(input => {
+                input.addEventListener('change', () => {
+                    const rating = input.value;
+                    container.querySelectorAll('.starLabel input').forEach((el, index) => {
+                        if (index < rating) {
+                            el.nextElementSibling.style.fill = '#ffeb49';
+                        } else {
+                            el.nextElementSibling.style.fill = '#dfdfdf';
+                        }
+                    });
                 });
-    
-                // Show the selected content
-                const contentId = `content-${item.id}`;
-                const contentToShow = document.getElementById(contentId);
-                if (contentToShow) {
-                    contentToShow.style.display = 'block';
-                }
-    
-                // Update menu item color
-                menuItems.forEach(menuItem => {
-                    menuItem.classList.remove('active');
-                });
-                item.classList.add('active');
             });
         });
-    
-        // Set initial state
-        const initialMenuItem = document.getElementById('item1'); // Assuming the first menu item has id 'item1'
-        if (initialMenuItem) {
-            initialMenuItem.click(); // Simulate click on the first menu item to show its content
-        }
-    </script>
-    <script src="https://code.jquery.com/jquery-3.6.4.min.js"></script>
-    
-    <script>
-        $(document).ready(function() {
-            $(".FeaturedBtnLeft").click(function() {
-                $(".WebViewCarouselOneProductDetails").animate({
-                    scrollLeft: "-=250px" // Adjust the value as needed for the scroll distance
-                }, "slow");
-            });
-    
-            $(".FeaturedBtnRight").click(function() {
-                $(".WebViewCarouselOneProductDetails").animate({
-                    scrollLeft: "+=250px" // Adjust the value as needed for the scroll distance
-                }, "slow");
-            });
-        });
-    </script>
-    <script>
-        $(document).ready(function() {
-            $(".CategoryBtnLeft").click(function() {
-                $(".WebViewCategoriesCardOneProductDetails").animate({
-                    scrollLeft: "-=250px" // Adjust the value as needed for the scroll distance
-                }, "slow");
-            });
-    
-            $(".CategoryBtnRight").click(function() {
-                $(".WebViewCategoriesCardOneProductDetails").animate({
-                    scrollLeft: "+=250px" // Adjust the value as needed for the scroll distance
-                }, "slow");
-            });
-        });
-    </script>
+        
+          </script>
     
     
 </body>
