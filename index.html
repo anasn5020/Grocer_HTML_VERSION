@@ -91,20 +91,20 @@
                         <img src="Assets/Images/SmallIcons/SideBarOpenIcon.webp" alt="collapseIcon" loading="lazy" />
                     </a>
                     <!-- {{-- MVSideBarOpenIcon --}} -->
-                    <img src="/Assets/Images/Icons/GrocerLogo.webp" onerror="this.src='/Assets/IMAGES/ErrorImage.webp'"
-                        wire:navigate href="/" alt="Grocer__Logo" class="mainlogo" loading="lazy" />
+                  <a href="/index.html">  <img src="/Assets/Images/Icons/GrocerLogo.webp" onerror="this.src='/Assets/IMAGES/ErrorImage.webp'"
+                    wire:navigate href="/index.html" alt="Grocer__Logo" class="mainlogo" loading="lazy" /></a>
                 </div>
                 <!-- {{-- ****************Mobile View Profile and Cart******************** --}} -->
                 <div class="mobile_cart_profile">
                     <div class="mobile_image_profile">
-                        <a href="/settings">
+                        <a href="/setting.html">
                             <img src="Assets/Images/Banner/user4.webp" class="user_profile_image user_profile_image_nav"
                                 alt="userImage" loading="lazy" />
                         </a>
                     </div>
                     <div>
                         <h1 class="mobile_cart_heading position-relative m-0">
-                            <a wire:navigate href="/cart">
+                            <a wire:navigate href="/cart.html">
                                 <img src="Assets/Images/SmallIcons/ShopCart.webp" alt="cartImage" loading="lazy" />
                             </a>
                             <span class="position-absolute translate-middle cart_badge border border-light">
@@ -142,7 +142,7 @@
                                 <span class="visually-hidden">New alerts</span>
                             </span>
                         </h1>
-                        <a class="nav-link wislistHeading" href="/wishlist" wire:navigate>Wishlist</a>
+                        <a class="nav-link wislistHeading" href="/wishlist.html" wire:navigate>Wishlist</a>
                     </li>
                     <li class="nav-item dropdown d-flex cart_button">
                         <h1 class="cart_heading position-relative">
@@ -183,8 +183,8 @@
                                 </div>
                                 <h1 class="text-center">Cart is Empty</h1>
                                 <div class="mt-3 mb-3 d-flex justify-content-between align-items-center gap-3">
-                                    <a wire:navigate href="/cart" class="customDropdownCartButton1">My Cart</a>
-                                    <a wire:navigate href="/billing" class="customDropdownCartButton2">Checkout</a>
+                                    <a wire:navigate href="/cart.html" class="customDropdownCartButton1">My Cart</a>
+                                    <a wire:navigate href="/billing.html" class="customDropdownCartButton2">Checkout</a>
                                 </div>
                             </div>
                         </ul>
@@ -199,13 +199,13 @@
                         </a>
                         <ul class="dropdown-menu registerProfileDropdown">
                             <li>
-                                <a class="dropdown-item" href="/history">Order History</a>
+                                <a class="dropdown-item" href="/history.html">Order History</a>
                             </li>
-                            <li><a class="dropdown-item" href="/settings">Settings</a></li>
-                            <li><a class="dropdown-item" href="/orders">Orders</a></li>
+                            <li><a class="dropdown-item" href="/setting.html">Settings</a></li>
+                            <li><a class="dropdown-item" href="/orders.html">Orders</a></li>
                             <hr />
-                            <li><a class="dropdown-item" href="/login">Login</a></li>
-                            <li><a class="dropdown-item" href="/register">Register</a></li>
+                            <li><a class="dropdown-item" href="/authentication/login.html">Login</a></li>
+                            <li><a class="dropdown-item" href="/authentication/register.html">Register</a></li>
                         </ul>
             </div>
         </nav>
@@ -236,7 +236,7 @@
         style="border-top: 1px solid #f1f1f1;">
         <div class="container homeSubNavBarLayout">
             <div class="homeSubNavBarItem1">
-                <a href="/category" wire:navigate class="Explore_all_categories_Btn">
+                <a href="/category.html" wire:navigate class="Explore_all_categories_Btn">
                     <img src="Assets/Images/SmallIcons/BrowsCategoryIcon.png" alt="">
                     &nbsp;
                     Brows All Categories</a>
@@ -244,21 +244,21 @@
             <div class="homeSubNavBarItem2">
                 <ul class="navbar-nav me-auto my-2 my-lg-0 navbar-nav-scroll ullists_subhomenav">
                     <li class="nav-item home_li">
-                        <a href="/" wire:navigate
+                        <a href="/index.html" wire:navigate
                             class="{{ request()->is('/') ? 'active_subNav' : '' }} SubnavIconsAdjustment"><img
                                 src="Assets/Images/SmallIcons/HomeIcon.webp" alt="">&nbsp;Home</a>
                     </li>
                     <li class="nav-item deals_li">
-                        <a href="/hot-deals" wire:navigate class="SubnavIconsAdjustment"><img
+                        <a href="/hot-deals.html" wire:navigate class="SubnavIconsAdjustment"><img
                                 src="Assets/Images/SmallIcons/HotdealsIcon.webp" alt="">&nbsp;Hot
                             Deals</a>
                     </li>
                     <li class="nav-item promotions_li">
-                        <a href="/promotions" wire:navigate class="SubnavIconsAdjustment"><img
+                        <a href="/promotions.html" wire:navigate class="SubnavIconsAdjustment"><img
                                 src="Assets/Images/SmallIcons/PercentageIcon.webp" alt="">&nbsp;Promotions</a>
                     </li>
                     <li class="nav-item products_li">
-                        <a href="/new-products" wire:navigate class="SubnavIconsAdjustment"
+                        <a href="/new-products.html" wire:navigate class="SubnavIconsAdjustment"
                             onclick="scrollToSection('NewProductsSection')"><img
                                 src="Assets/Images/SmallIcons/MegaPhoneIcon.webp" alt="">&nbsp;New
                             Products</a>
@@ -421,7 +421,7 @@
             <div id="category" class="webviewCarouselOne">
                 <div class="homecategoryProductsMain flex-nowrap mb-sm-2 mb-md-2 mb-lg-0">
                     <div class=" mt-sm-5 mt-md-5 mt-lg-0">
-                        <a href="/category-products/{{ $id }}" wire:navigate>
+                        <a href="/category-product.html" wire:navigate>
                             <div class="CategoryCard text-center border-0" style="background-color: #FEEFEA">
                                 <div class="ImageDiv">
                                     <img src="./Assets/Images/Products/TOMATOOS.png"
@@ -436,7 +436,7 @@
                         </a>
                     </div>
                     <div class=" mt-sm-5 mt-md-5 mt-lg-0">
-                        <a href="/category-products/{{ $id }}" wire:navigate>
+                        <a href="/category-product.html" wire:navigate>
                             <div class="CategoryCard text-center border-0" style="background-color: #FEEFEA">
                                 <div class="ImageDiv">
                                     <img src="./Assets/Images/Products/TOMATOOS.png"
@@ -451,7 +451,7 @@
                         </a>
                     </div>
                     <div class=" mt-sm-5 mt-md-5 mt-lg-0">
-                        <a href="/category-products/{{ $id }}" wire:navigate>
+                        <a href="/category-product.html" wire:navigate>
                             <div class="CategoryCard text-center border-0" style="background-color: #FEEFEA">
                                 <div class="ImageDiv">
                                     <img src="./Assets/Images/Products/TOMATOOS.png"
@@ -466,7 +466,7 @@
                         </a>
                     </div>
                     <div class=" mt-sm-5 mt-md-5 mt-lg-0">
-                        <a href="/category-products/{{ $id }}" wire:navigate>
+                        <a href="/category-product.html" wire:navigate>
                             <div class="CategoryCard text-center border-0" style="background-color: #FEEFEA">
                                 <div class="ImageDiv">
                                     <img src="./Assets/Images/Products/TOMATOOS.png"
@@ -481,7 +481,7 @@
                         </a>
                     </div>
                     <div class=" mt-sm-5 mt-md-5 mt-lg-0">
-                        <a href="/category-products/{{ $id }}" wire:navigate>
+                        <a href="/category-product.html" wire:navigate>
                             <div class="CategoryCard text-center border-0" style="background-color: #FEEFEA">
                                 <div class="ImageDiv">
                                     <img src="./Assets/Images/Products/TOMATOOS.png"
@@ -496,7 +496,7 @@
                         </a>
                     </div>
                     <div class=" mt-sm-5 mt-md-5 mt-lg-0">
-                        <a href="/category-products/{{ $id }}" wire:navigate>
+                        <a href="/category-product.html" wire:navigate>
                             <div class="CategoryCard text-center border-0" style="background-color: #FEEFEA">
                                 <div class="ImageDiv">
                                     <img src="./Assets/Images/Products/TOMATOOS.png"
@@ -511,7 +511,7 @@
                         </a>
                     </div>
                     <div class=" mt-sm-5 mt-md-5 mt-lg-0">
-                        <a href="/category-products/{{ $id }}" wire:navigate>
+                        <a href="/category-product.html" wire:navigate>
                             <div class="CategoryCard text-center border-0" style="background-color: #FEEFEA">
                                 <div class="ImageDiv">
                                     <img src="./Assets/Images/Products/TOMATOOS.png"
@@ -526,7 +526,7 @@
                         </a>
                     </div>
                     <div class=" mt-sm-5 mt-md-5 mt-lg-0">
-                        <a href="/category-products/{{ $id }}" wire:navigate>
+                        <a href="/category-product.html" wire:navigate>
                             <div class="CategoryCard text-center border-0" style="background-color: #FEEFEA">
                                 <div class="ImageDiv">
                                     <img src="./Assets/Images/Products/TOMATOOS.png"
@@ -541,7 +541,7 @@
                         </a>
                     </div>
                     <div class=" mt-sm-5 mt-md-5 mt-lg-0">
-                        <a href="/category-products/{{ $id }}" wire:navigate>
+                        <a href="/category-product.html" wire:navigate>
                             <div class="CategoryCard text-center border-0" style="background-color: #FEEFEA">
                                 <div class="ImageDiv">
                                     <img src="./Assets/Images/Products/TOMATOOS.png"
@@ -567,7 +567,7 @@
                 <div class="MobileViewCategoriesCardOneMainDiv">
                     <!-- @foreach ($categories as $index => $item) -->
                     <div class="">
-                        <a href="/category-products/{{ $id }}" wire:navigate>
+                        <a href="/category-product.html" wire:navigate>
                             <div class="CategoryCard text-center border-0" style="background-color: #FEEFEA">
                                 <div class="ImageDiv">
                                     <img src="./Assets/Images/Products/TOMATOOS.png"
@@ -582,7 +582,7 @@
                         </a>
                     </div>
                     <div class="">
-                        <a href="/category-products/{{ $id }}" wire:navigate>
+                        <a href="/category-product.html" wire:navigate>
                             <div class="CategoryCard text-center border-0" style="background-color: #FEEFEA">
                                 <div class="ImageDiv">
                                     <img src="./Assets/Images/Products/TOMATOOS.png"
@@ -597,7 +597,7 @@
                         </a>
                     </div>
                     <div class="">
-                        <a href="/category-products/{{ $id }}" wire:navigate>
+                        <a href="/category-product.html" wire:navigate>
                             <div class="CategoryCard text-center border-0" style="background-color: #FEEFEA">
                                 <div class="ImageDiv">
                                     <img src="./Assets/Images/Products/TOMATOOS.png"
@@ -612,7 +612,7 @@
                         </a>
                     </div>
                     <div class="">
-                        <a href="/category-products/{{ $id }}" wire:navigate>
+                        <a href="/category-product.html" wire:navigate>
                             <div class="CategoryCard text-center border-0" style="background-color: #FEEFEA">
                                 <div class="ImageDiv">
                                     <img src="./Assets/Images/Products/TOMATOOS.png"
@@ -627,7 +627,7 @@
                         </a>
                     </div>
                     <div class="">
-                        <a href="/category-products/{{ $id }}" wire:navigate>
+                        <a href="/category-product.html" wire:navigate>
                             <div class="CategoryCard text-center border-0" style="background-color: #FEEFEA">
                                 <div class="ImageDiv">
                                     <img src="./Assets/Images/Products/TOMATOOS.png"
@@ -642,7 +642,7 @@
                         </a>
                     </div>
                     <div class="">
-                        <a href="/category-products/{{ $id }}" wire:navigate>
+                        <a href="/category-product.html" wire:navigate>
                             <div class="CategoryCard text-center border-0" style="background-color: #FEEFEA">
                                 <div class="ImageDiv">
                                     <img src="./Assets/Images/Products/TOMATOOS.png"
@@ -743,7 +743,7 @@
                                     </h6>
                                 </div>
                                 <div class="productcardImage text-center">
-                                    <a href="/product-details/{{ $id }}" wire:navigate>
+                                    <a href="/Product-details.html" wire:navigate>
                                         <img src="./Assets/Images/Products/TOMATOOS.png"
                                             onerror="this.src='Assets/Images/ERROR/ErrorImage.webp'"
                                             class="featuredProductImage" alt="{{ $name }}" loading="lazy">
@@ -789,7 +789,7 @@
                                     </h6>
                                 </div>
                                 <div class="productcardImage text-center">
-                                    <a href="/product-details/{{ $id }}" wire:navigate>
+                                    <a href="/Product-details.html" wire:navigate>
                                         <img src="./Assets/Images/Products/TOMATOOS.png"
                                             onerror="this.src='Assets/Images/ERROR/ErrorImage.webp'"
                                             class="featuredProductImage" alt="{{ $name }}" loading="lazy">
@@ -835,7 +835,7 @@
                                     </h6>
                                 </div>
                                 <div class="productcardImage text-center">
-                                    <a href="/product-details/{{ $id }}" wire:navigate>
+                                    <a href="/Product-details.html" wire:navigate>
                                         <img src="./Assets/Images/Products/TOMATOOS.png"
                                             onerror="this.src='Assets/Images/ERROR/ErrorImage.webp'"
                                             class="featuredProductImage" alt="{{ $name }}" loading="lazy">
@@ -881,7 +881,7 @@
                                     </h6>
                                 </div>
                                 <div class="productcardImage text-center">
-                                    <a href="/product-details/{{ $id }}" wire:navigate>
+                                    <a href="/Product-details.html" wire:navigate>
                                         <img src="./Assets/Images/Products/TOMATOOS.png"
                                             onerror="this.src='Assets/Images/ERROR/ErrorImage.webp'"
                                             class="featuredProductImage" alt="{{ $name }}" loading="lazy">
@@ -927,7 +927,7 @@
                                     </h6>
                                 </div>
                                 <div class="productcardImage text-center">
-                                    <a href="/product-details/{{ $id }}" wire:navigate>
+                                    <a href="/Product-details.html" wire:navigate>
                                         <img src="./Assets/Images/Products/TOMATOOS.png"
                                             onerror="this.src='Assets/Images/ERROR/ErrorImage.webp'"
                                             class="featuredProductImage" alt="{{ $name }}" loading="lazy">
@@ -963,7 +963,7 @@
                                     </div>
                                 </div>
                             </div>
-
+                        
                         </div>
                         <div class="">
                             <div class="FeaturedProductsCard position-relative">
@@ -973,7 +973,7 @@
                                     </h6>
                                 </div>
                                 <div class="productcardImage text-center">
-                                    <a href="/product-details/{{ $id }}" wire:navigate>
+                                    <a href="/Product-details.html" wire:navigate>
                                         <img src="./Assets/Images/Products/TOMATOOS.png"
                                             onerror="this.src='Assets/Images/ERROR/ErrorImage.webp'"
                                             class="featuredProductImage" alt="{{ $name }}" loading="lazy">
@@ -1009,7 +1009,7 @@
                                     </div>
                                 </div>
                             </div>
-
+                        
                         </div>
                         <div class="">
                             <div class="FeaturedProductsCard position-relative">
@@ -1019,7 +1019,7 @@
                                     </h6>
                                 </div>
                                 <div class="productcardImage text-center">
-                                    <a href="/product-details/{{ $id }}" wire:navigate>
+                                    <a href="/Product-details.html" wire:navigate>
                                         <img src="./Assets/Images/Products/TOMATOOS.png"
                                             onerror="this.src='Assets/Images/ERROR/ErrorImage.webp'"
                                             class="featuredProductImage" alt="{{ $name }}" loading="lazy">
@@ -1055,7 +1055,7 @@
                                     </div>
                                 </div>
                             </div>
-
+                        
                         </div>
                         <div class="">
                             <div class="FeaturedProductsCard position-relative">
@@ -1065,7 +1065,7 @@
                                     </h6>
                                 </div>
                                 <div class="productcardImage text-center">
-                                    <a href="/product-details/{{ $id }}" wire:navigate>
+                                    <a href="/Product-details.html" wire:navigate>
                                         <img src="./Assets/Images/Products/TOMATOOS.png"
                                             onerror="this.src='Assets/Images/ERROR/ErrorImage.webp'"
                                             class="featuredProductImage" alt="{{ $name }}" loading="lazy">
@@ -1101,7 +1101,7 @@
                                     </div>
                                 </div>
                             </div>
-
+                        
                         </div>
                     </div>
                     <button class="FeaturedBtnLeft">
@@ -1122,7 +1122,7 @@
                                     </h6>
                                 </div>
                                 <div class="productcardImage text-center">
-                                    <a href="/product-details/{{ $id }}" wire:navigate>
+                                    <a href="/Product-details.html" wire:navigate>
                                         <img src="./Assets/Images/Products/TOMATOOS.png"
                                             onerror="this.src='Assets/Images/ERROR/ErrorImage.webp'"
                                             class="featuredProductImage" alt="{{ $name }}" loading="lazy">
@@ -1167,7 +1167,7 @@
                                     </h6>
                                 </div>
                                 <div class="productcardImage text-center">
-                                    <a href="/product-details/{{ $id }}" wire:navigate>
+                                    <a href="/Product-details.html" wire:navigate>
                                         <img src="./Assets/Images/Products/TOMATOOS.png"
                                             onerror="this.src='Assets/Images/ERROR/ErrorImage.webp'"
                                             class="featuredProductImage" alt="{{ $name }}" loading="lazy">
@@ -1212,7 +1212,7 @@
                                     </h6>
                                 </div>
                                 <div class="productcardImage text-center">
-                                    <a href="/product-details/{{ $id }}" wire:navigate>
+                                    <a href="/Product-details.html" wire:navigate>
                                         <img src="./Assets/Images/Products/TOMATOOS.png"
                                             onerror="this.src='Assets/Images/ERROR/ErrorImage.webp'"
                                             class="featuredProductImage" alt="{{ $name }}" loading="lazy">
@@ -1257,7 +1257,7 @@
                                     </h6>
                                 </div>
                                 <div class="productcardImage text-center">
-                                    <a href="/product-details/{{ $id }}" wire:navigate>
+                                    <a href="/Product-details.html" wire:navigate>
                                         <img src="./Assets/Images/Products/TOMATOOS.png"
                                             onerror="this.src='Assets/Images/ERROR/ErrorImage.webp'"
                                             class="featuredProductImage" alt="{{ $name }}" loading="lazy">
@@ -1302,7 +1302,7 @@
                                     </h6>
                                 </div>
                                 <div class="productcardImage text-center">
-                                    <a href="/product-details/{{ $id }}" wire:navigate>
+                                    <a href="/Product-details.html" wire:navigate>
                                         <img src="./Assets/Images/Products/TOMATOOS.png"
                                             onerror="this.src='Assets/Images/ERROR/ErrorImage.webp'"
                                             class="featuredProductImage" alt="{{ $name }}" loading="lazy">
@@ -1347,7 +1347,7 @@
                                     </h6>
                                 </div>
                                 <div class="productcardImage text-center">
-                                    <a href="/product-details/{{ $id }}" wire:navigate>
+                                    <a href="/Product-details.html" wire:navigate>
                                         <img src="./Assets/Images/Products/TOMATOOS.png"
                                             onerror="this.src='Assets/Images/ERROR/ErrorImage.webp'"
                                             class="featuredProductImage" alt="{{ $name }}" loading="lazy">
@@ -1392,7 +1392,7 @@
                                     </h6>
                                 </div>
                                 <div class="productcardImage text-center">
-                                    <a href="/product-details/{{ $id }}" wire:navigate>
+                                    <a href="/Product-details.html" wire:navigate>
                                         <img src="./Assets/Images/Products/TOMATOOS.png"
                                             onerror="this.src='Assets/Images/ERROR/ErrorImage.webp'"
                                             class="featuredProductImage" alt="{{ $name }}" loading="lazy">
@@ -1437,7 +1437,7 @@
                                     </h6>
                                 </div>
                                 <div class="productcardImage text-center">
-                                    <a href="/product-details/{{ $id }}" wire:navigate>
+                                    <a href="/Product-details.html" wire:navigate>
                                         <img src="./Assets/Images/Products/TOMATOOS.png"
                                             onerror="this.src='Assets/Images/ERROR/ErrorImage.webp'"
                                             class="featuredProductImage" alt="{{ $name }}" loading="lazy">
@@ -1482,7 +1482,7 @@
                                     </h6>
                                 </div>
                                 <div class="productcardImage text-center">
-                                    <a href="/product-details/{{ $id }}" wire:navigate>
+                                    <a href="/Product-details.html" wire:navigate>
                                         <img src="./Assets/Images/Products/TOMATOOS.png"
                                             onerror="this.src='Assets/Images/ERROR/ErrorImage.webp'"
                                             class="featuredProductImage" alt="{{ $name }}" loading="lazy">
@@ -1527,97 +1527,7 @@
                                     </h6>
                                 </div>
                                 <div class="productcardImage text-center">
-                                    <a href="/product-details/{{ $id }}" wire:navigate>
-                                        <img src="./Assets/Images/Products/TOMATOOS.png"
-                                            onerror="this.src='Assets/Images/ERROR/ErrorImage.webp'"
-                                            class="featuredProductImage" alt="{{ $name }}" loading="lazy">
-                                    </a>
-                                </div>
-                                <div class="card-body">
-                                    <p class="categoryname">Fruits</p>
-                                    <div class="nameAndUnitHeading">
-                                        <h1 class="h2 card_heading">Apple</h1>
-                                        <h4>(Kg)</h4>
-                                    </div>
-                                    <livewire:components.rating-stars :rating="$rating" />
-                                    <div class="col d-flex justify-content-start mt-2">
-                                        <div>
-                                            <h1 class="productby1">By</h1>
-                                        </div>
-                                        <div>
-                                            <h1 class="productby2">&nbsp;Grocer</h1>
-                                        </div>
-                                    </div>
-                                    <div class="PriceDivFeaturedProduct mt-2">
-                                        <div class="d-flex">
-                                            <h1 class="pricetag align-self-center">100$
-                                            </h1>
-                                        </div>
-                                        <div class="text-end align-self-center">
-                                            <a class="btn addbutton py-2"
-                                                wire:click.prevent="addToCart('{{ $id }}', '{{ $name }}', '{{ $image }}', '{{ $discountedPrice }}',  @json($variations), '{{ $unit }}')">
-                                                <i class="bi bi-cart"></i>&nbsp;Add
-                                            </a>
-                                        </div>
-
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
-                        <div class="">
-                            <div class="FeaturedProductsCard position-relative">
-                                <div class="position-absolute BestSellCardOffTag">
-                                    <h6>
-                                        Save 10%
-                                    </h6>
-                                </div>
-                                <div class="productcardImage text-center">
-                                    <a href="/product-details/{{ $id }}" wire:navigate>
-                                        <img src="./Assets/Images/Products/TOMATOOS.png"
-                                            onerror="this.src='Assets/Images/ERROR/ErrorImage.webp'"
-                                            class="featuredProductImage" alt="{{ $name }}" loading="lazy">
-                                    </a>
-                                </div>
-                                <div class="card-body">
-                                    <p class="categoryname">Fruits</p>
-                                    <div class="nameAndUnitHeading">
-                                        <h1 class="h2 card_heading">Apple</h1>
-                                        <h4>(Kg)</h4>
-                                    </div>
-                                    <livewire:components.rating-stars :rating="$rating" />
-                                    <div class="col d-flex justify-content-start mt-2">
-                                        <div>
-                                            <h1 class="productby1">By</h1>
-                                        </div>
-                                        <div>
-                                            <h1 class="productby2">&nbsp;Grocer</h1>
-                                        </div>
-                                    </div>
-                                    <div class="PriceDivFeaturedProduct mt-2">
-                                        <div class="d-flex">
-                                            <h1 class="pricetag align-self-center">100$
-                                            </h1>
-                                        </div>
-                                        <div class="text-end align-self-center">
-                                            <a class="btn addbutton py-2"
-                                                wire:click.prevent="addToCart('{{ $id }}', '{{ $name }}', '{{ $image }}', '{{ $discountedPrice }}',  @json($variations), '{{ $unit }}')">
-                                                <i class="bi bi-cart"></i>&nbsp;Add
-                                            </a>
-                                        </div>
-
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
-                        <div class="">
-                            <div class="FeaturedProductsCard position-relative">
-                                <div class="position-absolute BestSellCardOffTag">
-                                    <h6>
-                                        Save 10%
-                                    </h6>
-                                </div>
-                                <div class="productcardImage text-center">
-                                    <a href="/product-details/{{ $id }}" wire:navigate>
+                                    <a href="/Product-details.html" wire:navigate>
                                         <img src="./Assets/Images/Products/TOMATOOS.png"
                                             onerror="this.src='Assets/Images/ERROR/ErrorImage.webp'"
                                             class="featuredProductImage" alt="{{ $name }}" loading="lazy">
@@ -1669,13 +1579,13 @@
             <!-- @if ($flashDeals) -->
             <div class="d-flex flex-column flex-md-row justify-content-between align-items-center gap-3">
                 <div class="">
-                    <a href="/promotions" wire:navigate>
+                    <a href="/promotions.html" wire:navigate>
                         <img src="./Assets/Images/Banner/OFFER_ONE.png"
                             onerror="this.src='Assets/Images/Banner/Offer1.webp'" class="offersBanner" alt="">
                     </a>
                 </div>
                 <div class="d-none d-md-block">
-                    <a href="/promotions" wire:navigate>
+                    <a href="/promotions.html" wire:navigate>
                         <img src="./Assets/Images/Banner/OFFER_TWO.png"
                             onerror="this.src='Assets/Images/Banner/Offer1.webp'" class="offersBanner" alt="">
                     </a>
@@ -1755,7 +1665,6 @@
                     <label for="popular" role="button"
                         class="{{ $bestSellId == '/popular' ? 'new_button' : '' }} custom-button">Best Sells</label>
                 </div>
-                {{-- <button class="custom-button new_button">Featured</button> --}}
                 <div class="d-flex">
                     <input type="radio" value="/trending" class="d-none" id="trending" wire:model.live="bestSellId" />
                     <label for="trending" role="button"
@@ -1785,7 +1694,7 @@
                                 </h6>
                             </div>
                             <div class="BestSellCardImage">
-                                <a href="/product-details/{{ $id }}" wire:navigate>
+                                <a href="/Product-details.html" wire:navigate>
                                     <img src="./Assets/Images/Products/TOMATOOS.png"
                                         onerror="this.src='Assets/Images/ERROR/ErrorImage.webp'" class=""
                                         alt="{{ $name }}">
@@ -1841,7 +1750,7 @@
                                 </h6>
                             </div>
                             <div class="BestSellCardImage">
-                                <a href="/product-details/{{ $id }}" wire:navigate>
+                                <a href="/Product-details.html" wire:navigate>
                                     <img src="./Assets/Images/Products/TOMATOOS.png"
                                         onerror="this.src='Assets/Images/ERROR/ErrorImage.webp'" class=""
                                         alt="{{ $name }}">
@@ -1897,7 +1806,7 @@
                                 </h6>
                             </div>
                             <div class="BestSellCardImage">
-                                <a href="/product-details/{{ $id }}" wire:navigate>
+                                <a href="/Product-details.html" wire:navigate>
                                     <img src="./Assets/Images/Products/TOMATOOS.png"
                                         onerror="this.src='Assets/Images/ERROR/ErrorImage.webp'" class=""
                                         alt="{{ $name }}">
@@ -1953,7 +1862,7 @@
                                 </h6>
                             </div>
                             <div class="BestSellCardImage">
-                                <a href="/product-details/{{ $id }}" wire:navigate>
+                                <a href="/Product-details.html" wire:navigate>
                                     <img src="./Assets/Images/Products/TOMATOOS.png"
                                         onerror="this.src='Assets/Images/ERROR/ErrorImage.webp'" class=""
                                         alt="{{ $name }}">
@@ -2009,7 +1918,7 @@
                                 </h6>
                             </div>
                             <div class="BestSellCardImage">
-                                <a href="/product-details/{{ $id }}" wire:navigate>
+                                <a href="/Product-details.html" wire:navigate>
                                     <img src="./Assets/Images/Products/TOMATOOS.png"
                                         onerror="this.src='Assets/Images/ERROR/ErrorImage.webp'" class=""
                                         alt="{{ $name }}">
@@ -2065,7 +1974,7 @@
                                 </h6>
                             </div>
                             <div class="BestSellCardImage">
-                                <a href="/product-details/{{ $id }}" wire:navigate>
+                                <a href="/Product-details.html" wire:navigate>
                                     <img src="./Assets/Images/Products/TOMATOOS.png"
                                         onerror="this.src='Assets/Images/ERROR/ErrorImage.webp'" class=""
                                         alt="{{ $name }}">
@@ -2121,7 +2030,7 @@
                                 </h6>
                             </div>
                             <div class="BestSellCardImage">
-                                <a href="/product-details/{{ $id }}" wire:navigate>
+                                <a href="/Product-details.html" wire:navigate>
                                     <img src="./Assets/Images/Products/TOMATOOS.png"
                                         onerror="this.src='Assets/Images/ERROR/ErrorImage.webp'" class=""
                                         alt="{{ $name }}">
@@ -2177,7 +2086,63 @@
                                 </h6>
                             </div>
                             <div class="BestSellCardImage">
-                                <a href="/product-details/{{ $id }}" wire:navigate>
+                                <a href="/Product-details.html" wire:navigate>
+                                    <img src="./Assets/Images/Products/TOMATOOS.png"
+                                        onerror="this.src='Assets/Images/ERROR/ErrorImage.webp'" class=""
+                                        alt="{{ $name }}">
+                                </a>
+                            </div>
+                            <div class="card-body">
+                                <p class="BestSellCardName">Fruits</p>
+                                <div class="bestSellCardNameAndUnitHeadingMain">
+                                    <h1 class="h2 BestSellCardHeading">Orange</h1>
+                                    <h4>(PC)</h4>
+                                </div>
+                                <livewire:components.rating-stars :rating="$rating" />
+                                <div class="col d-flex justify-content-start">
+                                    <div>
+                                        <h1 class="BestSellCardProductby1">By</h1>
+                                    </div>
+                                    <div>
+                                        <h1 class="BestSellCardProductby2">&nbsp;Grocer</h1>
+                                    </div>
+                                </div>
+                                <div class="row mt-2">
+                                    <div class="col d-flex">
+                                        <h1 class="BestSellCardPriceTag align-self-center">
+                                            100$
+                                        </h1>
+                                        <h3 class="BestSellCardCrossPriceTag align-self-center">
+                                            &nbsp;&nbsp;<del>100$</del>
+                                        </h3>
+                                    </div>
+                                </div>
+                                <div class="col">
+                                    <div class="progress BestSellCardProgressMain">
+                                        <div class="progress-bar BestSellCardProgress" role="progressbar"
+                                            aria-label="Example with label" style="width: 25%;" aria-valuenow="25"
+                                            aria-valuemin="0" aria-valuemax="100"></div>
+                                    </div>
+                                    <h6 class="progressstatus">Sold: 20/50</h6>
+                                </div>
+                                <div class="col text-center align-self-center mt-2">
+                                    <button class="btn BestSellCardAddButton py-2 w-100"
+                                        wire:click.prevent="addToCart('{{ $id }}',  '{{ $name }}', '{{ $image }}', '{{ $discountedPrice }}',  @json($variations), '{{ $unit }}')">
+                                        <i class="bi bi-cart"></i>&nbsp;Add
+                                    </button>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="mt-2">
+                        <div class="BestSellCard position-relative mb-sm-5 mb-md-2 mb-lg-0">
+                            <div class="position-absolute BestSellCardOffTag">
+                                <h6>
+                                    Save 10%
+                                </h6>
+                            </div>
+                            <div class="BestSellCardImage">
+                                <a href="/Product-details.html" wire:navigate>
                                     <img src="./Assets/Images/Products/TOMATOOS.png"
                                         onerror="this.src='Assets/Images/ERROR/ErrorImage.webp'" class=""
                                         alt="{{ $name }}">
@@ -2273,7 +2238,7 @@
                             </h6>
                         </div>
                         <div class="BestSellCardImage">
-                            <a href="/product-details/{{ $id }}" wire:navigate>
+                            <a href="/Product-details.html" wire:navigate>
                                 <img src="./Assets/Images/Products/TOMATOOS.png"
                                     onerror="this.src='Assets/Images/ERROR/ErrorImage.webp'" class="" alt="{{ $name }}">
                             </a>
@@ -2328,7 +2293,7 @@
                             </h6>
                         </div>
                         <div class="BestSellCardImage">
-                            <a href="/product-details/{{ $id }}" wire:navigate>
+                            <a href="/Product-details.html" wire:navigate>
                                 <img src="./Assets/Images/Products/TOMATOOS.png"
                                     onerror="this.src='Assets/Images/ERROR/ErrorImage.webp'" class="" alt="{{ $name }}">
                             </a>
@@ -2383,7 +2348,7 @@
                             </h6>
                         </div>
                         <div class="BestSellCardImage">
-                            <a href="/product-details/{{ $id }}" wire:navigate>
+                            <a href="/Product-details.html" wire:navigate>
                                 <img src="./Assets/Images/Products/TOMATOOS.png"
                                     onerror="this.src='Assets/Images/ERROR/ErrorImage.webp'" class="" alt="{{ $name }}">
                             </a>
@@ -2438,7 +2403,7 @@
                             </h6>
                         </div>
                         <div class="BestSellCardImage">
-                            <a href="/product-details/{{ $id }}" wire:navigate>
+                            <a href="/Product-details.html" wire:navigate>
                                 <img src="./Assets/Images/Products/TOMATOOS.png"
                                     onerror="this.src='Assets/Images/ERROR/ErrorImage.webp'" class="" alt="{{ $name }}">
                             </a>
@@ -2493,7 +2458,7 @@
                             </h6>
                         </div>
                         <div class="BestSellCardImage">
-                            <a href="/product-details/{{ $id }}" wire:navigate>
+                            <a href="/Product-details.html" wire:navigate>
                                 <img src="./Assets/Images/Products/TOMATOOS.png"
                                     onerror="this.src='Assets/Images/ERROR/ErrorImage.webp'" class="" alt="{{ $name }}">
                             </a>
@@ -2563,7 +2528,7 @@
                                 </h6>
                             </div>
                             <div class="card_img p-1">
-                                <a href="/product-details/{{ $id }}" wire:navigate>
+                                <a href="/Product-details.html" wire:navigate>
                                     <img src="./Assets/Images/Products/TOMATOOS.png"
                                         onerror="this.src='Assets/Images/ERROR/ErrorImage.webp'" class=""
                                         alt="{{ $name }}" loading="lazy">
@@ -2598,7 +2563,7 @@
                                 </h6>
                             </div>
                             <div class="card_img p-1">
-                                <a href="/product-details/{{ $id }}" wire:navigate>
+                                <a href="/Product-details.html" wire:navigate>
                                     <img src="./Assets/Images/Products/TOMATOOS.png"
                                         onerror="this.src='Assets/Images/ERROR/ErrorImage.webp'" class=""
                                         alt="{{ $name }}" loading="lazy">
@@ -2633,7 +2598,7 @@
                                 </h6>
                             </div>
                             <div class="card_img p-1">
-                                <a href="/product-details/{{ $id }}" wire:navigate>
+                                <a href="/Product-details.html" wire:navigate>
                                     <img src="./Assets/Images/Products/TOMATOOS.png"
                                         onerror="this.src='Assets/Images/ERROR/ErrorImage.webp'" class=""
                                         alt="{{ $name }}" loading="lazy">
@@ -2678,7 +2643,7 @@
                                 </h6>
                             </div>
                             <div class="card_img p-1">
-                                <a href="/product-details/{{ $id }}" wire:navigate>
+                                <a href="/Product-details.html" wire:navigate>
                                     <img src="./Assets/Images/Products/TOMATOOS.png"
                                         onerror="this.src='Assets/Images/ERROR/ErrorImage.webp'" class=""
                                         alt="{{ $name }}" loading="lazy">
@@ -2713,7 +2678,7 @@
                                 </h6>
                             </div>
                             <div class="card_img p-1">
-                                <a href="/product-details/{{ $id }}" wire:navigate>
+                                <a href="/Product-details.html" wire:navigate>
                                     <img src="./Assets/Images/Products/TOMATOOS.png"
                                         onerror="this.src='Assets/Images/ERROR/ErrorImage.webp'" class=""
                                         alt="{{ $name }}" loading="lazy">
@@ -2748,7 +2713,7 @@
                                 </h6>
                             </div>
                             <div class="card_img p-1">
-                                <a href="/product-details/{{ $id }}" wire:navigate>
+                                <a href="/Product-details.html" wire:navigate>
                                     <img src="./Assets/Images/Products/TOMATOOS.png"
                                         onerror="this.src='Assets/Images/ERROR/ErrorImage.webp'" class=""
                                         alt="{{ $name }}" loading="lazy">
@@ -2793,7 +2758,7 @@
                                 </h6>
                             </div>
                             <div class="card_img p-1">
-                                <a href="/product-details/{{ $id }}" wire:navigate>
+                                <a href="/Product-details.html" wire:navigate>
                                     <img src="./Assets/Images/Products/TOMATOOS.png"
                                         onerror="this.src='Assets/Images/ERROR/ErrorImage.webp'" class=""
                                         alt="{{ $name }}" loading="lazy">
@@ -2828,7 +2793,7 @@
                                 </h6>
                             </div>
                             <div class="card_img p-1">
-                                <a href="/product-details/{{ $id }}" wire:navigate>
+                                <a href="/Product-details.html" wire:navigate>
                                     <img src="./Assets/Images/Products/TOMATOOS.png"
                                         onerror="this.src='Assets/Images/ERROR/ErrorImage.webp'" class=""
                                         alt="{{ $name }}" loading="lazy">
@@ -2863,7 +2828,7 @@
                                 </h6>
                             </div>
                             <div class="card_img p-1">
-                                <a href="/product-details/{{ $id }}" wire:navigate>
+                                <a href="/Product-details.html" wire:navigate>
                                     <img src="./Assets/Images/Products/TOMATOOS.png"
                                         onerror="this.src='Assets/Images/ERROR/ErrorImage.webp'" class=""
                                         alt="{{ $name }}" loading="lazy">
@@ -2908,7 +2873,7 @@
                                 </h6>
                             </div>
                             <div class="card_img p-1">
-                                <a href="/product-details/{{ $id }}" wire:navigate>
+                                <a href="/Product-details.html" wire:navigate>
                                     <img src="./Assets/Images/Products/TOMATOOS.png"
                                         onerror="this.src='Assets/Images/ERROR/ErrorImage.webp'" class=""
                                         alt="{{ $name }}" loading="lazy">
@@ -2943,7 +2908,7 @@
                                 </h6>
                             </div>
                             <div class="card_img p-1">
-                                <a href="/product-details/{{ $id }}" wire:navigate>
+                                <a href="/Product-details.html" wire:navigate>
                                     <img src="./Assets/Images/Products/TOMATOOS.png"
                                         onerror="this.src='Assets/Images/ERROR/ErrorImage.webp'" class=""
                                         alt="{{ $name }}" loading="lazy">
@@ -2978,7 +2943,7 @@
                                 </h6>
                             </div>
                             <div class="card_img p-1">
-                                <a href="/product-details/{{ $id }}" wire:navigate>
+                                <a href="/Product-details.html" wire:navigate>
                                     <img src="./Assets/Images/Products/TOMATOOS.png"
                                         onerror="this.src='Assets/Images/ERROR/ErrorImage.webp'" class=""
                                         alt="{{ $name }}" loading="lazy">
@@ -3131,16 +3096,16 @@
                         <h1 class="footerheadings">Account</h1>
                     </li>
                     <li class="mb-3">
-                        <a class="footerSubHeadings" href="/wishlist" wire:navigate>Wishlist</a>
+                        <a class="footerSubHeadings" href="/wishlist.html" wire:navigate>Wishlist</a>
                     </li>
                     <li class="mb-3">
-                        <a class="footerSubHeadings" href="/cart" wire:navigate>Cart</a>
+                        <a class="footerSubHeadings" href="/cart.html" wire:navigate>Cart</a>
                     </li>
                     <li class="mb-3">
-                        <a class="footerSubHeadings" href="/track" wire:navigate>Track Order</a>
+                        <a class="footerSubHeadings" href="/track.html" wire:navigate>Track Order</a>
                     </li>
                     <li class="mb-3">
-                        <a class="footerSubHeadings" href="/billing" wire:navigate>Shipping Details</a>
+                        <a class="footerSubHeadings" href="/billing.html" wire:navigate>Shipping Details</a>
                     </li>
                 </ul>
             </div>
@@ -3149,11 +3114,11 @@
                     <li class="mb-4">
                         <h1 class="footerheadings">Useful links</h1>
                     </li>
-                    <li class="mb-3 footerSubHeadings"><a class="footerSubHeadings" href="/about-us" wire:navigate>About
+                    <li class="mb-3 footerSubHeadings"><a class="footerSubHeadings" href="/about-us.html" wire:navigate>About
                             Us</a></li>
-                    <li class="mb-3 footerSubHeadings"><a class="footerSubHeadings" href="/hot-deals" wire:navigate>Hot
+                    <li class="mb-3 footerSubHeadings"><a class="footerSubHeadings" href="/hot-deals.html" wire:navigate>Hot
                             deals</a></li>
-                    <li class="mb-3 footerSubHeadings"><a class="footerSubHeadings" href="/promotions"
+                    <li class="mb-3 footerSubHeadings"><a class="footerSubHeadings" href="/promotions.html"
                             wire:navigate>Promotions</a></li>
                 </ul>
             </div>
@@ -3162,13 +3127,13 @@
                     <li class="mb-4">
                         <h1 class="footerheadings">Help Center</h1>
                     </li>
-                    <li class="mb-3 footerSubHeadings"><a class="footerSubHeadings" href="/refund"
+                    <li class="mb-3 footerSubHeadings"><a class="footerSubHeadings" href="/refund.html"
                             wire:navigate>Refund</a>
                     </li>
-                    <li class="mb-3 footerSubHeadings"><a class="footerSubHeadings" href="/contact-us"
+                    <li class="mb-3 footerSubHeadings"><a class="footerSubHeadings" href="/contact-us.html"
                             wire:navigate>Contact
                             Us</a></li>
-                    <li class="mb-3 footerSubHeadings"><a class="footerSubHeadings" href="/faq" wire:navigate>Q&A</a>
+                    <li class="mb-3 footerSubHeadings"><a class="footerSubHeadings" href="/faq.html" wire:navigate>Q&A</a>
                     </li>
                 </ul>
             </div>
