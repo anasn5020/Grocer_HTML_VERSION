@@ -38,6 +38,59 @@ body {
     gap: 20px;
 }
 
+.offerContent{
+    position: absolute;
+    top: 30px;
+    left: 30px;
+}
+.offerContentBadgeOne{
+    background-color: #FDC040;
+    color: white;
+    border-radius: 3px;
+    padding: 7px;
+}
+.offerContentBadgeTwo{
+    background-color: #53B175;
+    color: white;
+    border-radius: 3px;
+    padding: 7px 15px;
+}
+.offerContent h1{
+    font-size: 28px;
+    font-weight: 600;
+    font-family: Quicksand;
+    color: #253D4E;
+    margin-top: 20px;
+}
+.offerContent p{
+    font-size: 18px;
+    font-weight: 500;
+    font-family: Quicksand;
+    color: #838383;
+    width: 70%;
+}
+.offerSButton{
+    font-size: 16px;
+    font-weight: 600;
+    font-family: Quicksand;
+    color: #ffffff;
+    padding: 20px;
+    background-color: #53B175;
+    width: 52%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+.offersImage{
+    position: absolute;
+     top: 10px;
+      right: 10px;
+}
+
+
+
+
+
 .homecategoryProductsMain {
     display: flex;
     justify-content: flex-start;
@@ -645,6 +698,44 @@ li {
 }
 
 @media screen and (max-width:500px) {
+
+    .offersImage{
+        position: absolute;
+        top: 10px;
+        right: 10px;
+        width: 123px;
+    }
+    .offerContent h1 {
+        font-size: 20px;
+        font-weight: 600;
+        font-family: Quicksand;
+        color: #253D4E;
+        margin-top: 20px;
+    }
+    .offerContentBadgeOne {
+        background-color: #FDC040;
+        color: white;
+        border-radius: 3px;
+        padding: 5px;
+        font-size: 10px;
+    }
+    .offerSButton {
+        font-size: 12px;
+        font-weight: 600;
+        font-family: Quicksand;
+        color: #ffffff;
+        padding: 10px;
+        background-color: #53B175;
+        width: 35%;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+    }
+    .offerContent {
+        position: absolute;
+        top: 8px;
+        left: 10px;
+    }
     .offers_shopNow_btn {
         border: none;
         text-align: center;

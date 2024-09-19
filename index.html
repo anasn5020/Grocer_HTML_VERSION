@@ -91,8 +91,9 @@
                         <img src="Assets/Images/SmallIcons/SideBarOpenIcon.webp" alt="collapseIcon" loading="lazy" />
                     </a>
                     <!-- {{-- MVSideBarOpenIcon --}} -->
-                  <a href="/index.html">  <img src="/Assets/Images/Icons/GrocerLogo.webp" onerror="this.src='/Assets/IMAGES/ErrorImage.webp'"
-                    wire:navigate href="/index.html" alt="Grocer__Logo" class="mainlogo" loading="lazy" /></a>
+                    <a href="/index.html"> <img src="/Assets/Images/Icons/GrocerLogo.webp"
+                            onerror="this.src='/Assets/IMAGES/ErrorImage.webp'" wire:navigate href="/index.html"
+                            alt="Grocer__Logo" class="mainlogo" loading="lazy" /></a>
                 </div>
                 <!-- {{-- ****************Mobile View Profile and Cart******************** --}} -->
                 <div class="mobile_cart_profile">
@@ -779,7 +780,7 @@
                                     </div>
                                 </div>
                             </div>
-                        
+
                         </div>
                         <div class="">
                             <div class="FeaturedProductsCard position-relative">
@@ -825,7 +826,7 @@
                                     </div>
                                 </div>
                             </div>
-                        
+
                         </div>
                         <div class="">
                             <div class="FeaturedProductsCard position-relative">
@@ -871,7 +872,7 @@
                                     </div>
                                 </div>
                             </div>
-                        
+
                         </div>
                         <div class="">
                             <div class="FeaturedProductsCard position-relative">
@@ -917,7 +918,7 @@
                                     </div>
                                 </div>
                             </div>
-                        
+
                         </div>
                         <div class="">
                             <div class="FeaturedProductsCard position-relative">
@@ -963,7 +964,7 @@
                                     </div>
                                 </div>
                             </div>
-                        
+
                         </div>
                         <div class="">
                             <div class="FeaturedProductsCard position-relative">
@@ -1009,7 +1010,7 @@
                                     </div>
                                 </div>
                             </div>
-                        
+
                         </div>
                         <div class="">
                             <div class="FeaturedProductsCard position-relative">
@@ -1055,7 +1056,7 @@
                                     </div>
                                 </div>
                             </div>
-                        
+
                         </div>
                         <div class="">
                             <div class="FeaturedProductsCard position-relative">
@@ -1101,7 +1102,7 @@
                                     </div>
                                 </div>
                             </div>
-                        
+
                         </div>
                     </div>
                     <button class="FeaturedBtnLeft">
@@ -1578,16 +1579,30 @@
         <div class="container mt-5 p-0">
             <!-- @if ($flashDeals) -->
             <div class="d-flex flex-column flex-md-row justify-content-between align-items-center gap-3">
-                <div class="">
-                    <a href="/promotions.html" wire:navigate>
-                        <img src="./Assets/Images/Banner/OFFER_ONE.png"
-                            onerror="this.src='Assets/Images/Banner/Offer1.webp'" class="offersBanner" alt="">
+                <div class="position-relative">
+                    <a href="/promotions.html">
+                        <img src="./Assets/Images/Banner/Yellow.png"
+                            onerror="this.src='Assets/Images/Banner/Yellow.png'" class="offersBanner" alt="">
+                        <img src="./Assets/Images/Banner/Offer1-img.webp" class="offersImage" alt="">
+                        <div class="offerContent">
+                            <span class="offerContentBadgeOne">Free Delivery</span>
+                            <h1>Free delivery over $50</h1>
+                            <p>Shop $50 product and get free delivery anywhre.</p>
+                            <a href="" class="offerSButton">Shop Now <i class="bi bi-arrow-right-short"></i></a>
+                        </div>
                     </a>
                 </div>
-                <div class="d-none d-md-block">
+                <div class="position-relative d-none d-md-block">
                     <a href="/promotions.html" wire:navigate>
-                        <img src="./Assets/Images/Banner/OFFER_TWO.png"
+                        <img src="./Assets/Images/Banner/Green.png"
                             onerror="this.src='Assets/Images/Banner/Offer1.webp'" class="offersBanner" alt="">
+                        <img src="./Assets/Images/Banner/Offer2-img.webp" style="position: absolute; bottom: 0px; right: 0px;" alt="">
+                        <div class="offerContent">
+                            <span class="offerContentBadgeTwo">60% Off</span>
+                            <h1>Organic Food</h1>
+                            <p>Save up to 60% off on your first order</p>
+                            <a href="" class="offerSButton">Order Now <i class="bi bi-arrow-right-short"></i></a>
+                        </div>
                     </a>
                 </div>
             </div>
@@ -1683,8 +1698,7 @@
                         <span class="visually-hidden">Loading...</span>
                     </div>
                 </div> -->
-                <div
-                    class="d-flex justify-content-start BestsellProductsSection mt-5 customWidth_80">
+                <div class="d-flex justify-content-start BestsellProductsSection mt-5 customWidth_80">
                     <!-- @foreach ($popularProducts as $item) -->
                     <div class="mt-2">
                         <div class="BestSellCard position-relative mb-sm-5 mb-md-2 mb-lg-0">
@@ -3114,9 +3128,11 @@
                     <li class="mb-4">
                         <h1 class="footerheadings">Useful links</h1>
                     </li>
-                    <li class="mb-3 footerSubHeadings"><a class="footerSubHeadings" href="/about-us.html" wire:navigate>About
+                    <li class="mb-3 footerSubHeadings"><a class="footerSubHeadings" href="/about-us.html"
+                            wire:navigate>About
                             Us</a></li>
-                    <li class="mb-3 footerSubHeadings"><a class="footerSubHeadings" href="/hot-deals.html" wire:navigate>Hot
+                    <li class="mb-3 footerSubHeadings"><a class="footerSubHeadings" href="/hot-deals.html"
+                            wire:navigate>Hot
                             deals</a></li>
                     <li class="mb-3 footerSubHeadings"><a class="footerSubHeadings" href="/promotions.html"
                             wire:navigate>Promotions</a></li>
@@ -3133,7 +3149,8 @@
                     <li class="mb-3 footerSubHeadings"><a class="footerSubHeadings" href="/contact-us.html"
                             wire:navigate>Contact
                             Us</a></li>
-                    <li class="mb-3 footerSubHeadings"><a class="footerSubHeadings" href="/faq.html" wire:navigate>Q&A</a>
+                    <li class="mb-3 footerSubHeadings"><a class="footerSubHeadings" href="/faq.html"
+                            wire:navigate>Q&A</a>
                     </li>
                 </ul>
             </div>
@@ -3174,14 +3191,14 @@
     <script src="https://code.jquery.com/jquery-3.6.4.min.js"></script>
     <script src="https://code.jquery.com/jquery-3.6.4.min.js"></script>
     <script>
-        $(document).ready(function() {
-            $(".CategoryBtnLeft").click(function() {
+        $(document).ready(function () {
+            $(".CategoryBtnLeft").click(function () {
                 $(".webviewCarouselOne").animate({
                     scrollLeft: "-=250px" // Adjust the value as needed for the scroll distance
                 }, "slow");
             });
-    
-            $(".CategoryBtnRight").click(function() {
+
+            $(".CategoryBtnRight").click(function () {
                 $(".webviewCarouselOne").animate({
                     scrollLeft: "+=250px" // Adjust the value as needed for the scroll distance
                 }, "slow");
@@ -3189,14 +3206,14 @@
         });
     </script>
     <script>
-        $(document).ready(function() {
-            $(".FeaturedBtnLeft").click(function() {
+        $(document).ready(function () {
+            $(".FeaturedBtnLeft").click(function () {
                 $(".WebViewCarouselTwo").animate({
                     scrollLeft: "-=250px" // Adjust the value as needed for the scroll distance
                 }, "slow");
             });
-    
-            $(".FeaturedBtnRight").click(function() {
+
+            $(".FeaturedBtnRight").click(function () {
                 $(".WebViewCarouselTwo").animate({
                     scrollLeft: "+=250px" // Adjust the value as needed for the scroll distance
                 }, "slow");
@@ -3204,21 +3221,21 @@
         });
     </script>
     <script>
-        $(document).ready(function() {
-            $(".BestSellProductarrowbtnLeft").click(function() {
+        $(document).ready(function () {
+            $(".BestSellProductarrowbtnLeft").click(function () {
                 $(".BestsellProductsSection").animate({
                     scrollLeft: "-=250px" // Adjust the value as needed for the scroll distance
                 }, "slow");
             });
-    
-            $(".BestSellProductarrowbtnRight").click(function() {
+
+            $(".BestSellProductarrowbtnRight").click(function () {
                 $(".BestsellProductsSection").animate({
                     scrollLeft: "+=250px" // Adjust the value as needed for the scroll distance
                 }, "slow");
             });
         });
     </script>
-    
+
 </body>
 
 </html>
